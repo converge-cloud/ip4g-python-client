@@ -1,0 +1,11 @@
+# NetworkPortUpdate
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**description** | **str** | Description of the port (not unique or indexable) | [optional] 
+**pvm_instance_id** | **str** | If supplied populated it attaches to the PVMInstanceID, if empty detaches from PVMInstanceID | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
