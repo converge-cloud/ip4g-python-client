@@ -1,6 +1,6 @@
 # ip4g.PCloudStorageCapacityApi
 
-All URIs are relative to *https://service-broker-api.staging.gpcloudtest.com*
+All URIs are relative to *https://service-broker-api.gpcloudtest.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
