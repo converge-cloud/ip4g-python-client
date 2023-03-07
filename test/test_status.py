@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.status import Status  # noqa: E501
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.models.status import Status  # noqa: E501
+from ip4g.rest import ApiException
 
 
 class TestStatus(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestStatus(unittest.TestCase):
     def testStatus(self):
         """Test Status"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.status.Status()  # noqa: E501
+        # model = ip4g.models.status.Status()  # noqa: E501
         pass
 
 

@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.network_port_pvm_instance import NetworkPortPvmInstance  # noqa: E501
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.models.network_port_pvm_instance import NetworkPortPvmInstance  # noqa: E501
+from ip4g.rest import ApiException
 
 
 class TestNetworkPortPvmInstance(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestNetworkPortPvmInstance(unittest.TestCase):
     def testNetworkPortPvmInstance(self):
         """Test NetworkPortPvmInstance"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.network_port_pvm_instance.NetworkPortPvmInstance()  # noqa: E501
+        # model = ip4g.models.network_port_pvm_instance.NetworkPortPvmInstance()  # noqa: E501
         pass
 
 

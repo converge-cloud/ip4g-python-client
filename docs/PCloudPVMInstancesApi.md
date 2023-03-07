@@ -1,4 +1,4 @@
-# swagger_client.PCloudPVMInstancesApi
+# ip4g.PCloudPVMInstancesApi
 
 All URIs are relative to *https://service-broker-api.staging.gpcloudtest.com*
 
@@ -36,15 +36,15 @@ Perform an action (start stop reboot immediate-shutdown reset) on a PVMInstance
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudPVMInstancesApi()
+api_instance = ip4g.PCloudPVMInstancesApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 pvm_instance_id = 'pvm_instance_id_example' # str | PCloud PVM Instance ID
-body = swagger_client.PVMInstanceAction() # PVMInstanceAction | Parameters for the desired action
+body = ip4g.PVMInstanceAction() # PVMInstanceAction | Parameters for the desired action
 
 try:
     # Perform an action (start stop reboot immediate-shutdown reset) on a PVMInstance
@@ -58,9 +58,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **pvm_instance_id** | **str**| PCloud PVM Instance ID | 
- **body** | [**PVMInstanceAction**](PVMInstanceAction.md)| Parameters for the desired action | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **pvm_instance_id** | **str**| PCloud PVM Instance ID |
+ **body** | [**PVMInstanceAction**](PVMInstanceAction.md)| Parameters for the desired action |
 
 ### Return type
 
@@ -86,15 +86,15 @@ Capture a PVMInstance and create a deployable image
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudPVMInstancesApi()
+api_instance = ip4g.PCloudPVMInstancesApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 pvm_instance_id = 'pvm_instance_id_example' # str | PCloud PVM Instance ID
-body = swagger_client.PVMInstanceCapture() # PVMInstanceCapture | Parameters for the capture PVMInstance
+body = ip4g.PVMInstanceCapture() # PVMInstanceCapture | Parameters for the capture PVMInstance
 
 try:
     # Capture a PVMInstance and create a deployable image
@@ -108,9 +108,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **pvm_instance_id** | **str**| PCloud PVM Instance ID | 
- **body** | [**PVMInstanceCapture**](PVMInstanceCapture.md)| Parameters for the capture PVMInstance | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **pvm_instance_id** | **str**| PCloud PVM Instance ID |
+ **body** | [**PVMInstanceCapture**](PVMInstanceCapture.md)| Parameters for the capture PVMInstance |
 
 ### Return type
 
@@ -136,15 +136,15 @@ Clone a PVMInstance
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudPVMInstancesApi()
+api_instance = ip4g.PCloudPVMInstancesApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 pvm_instance_id = 'pvm_instance_id_example' # str | PCloud PVM Instance ID
-body = swagger_client.PVMInstanceClone() # PVMInstanceClone | Clone PVM Instance parameters
+body = ip4g.PVMInstanceClone() # PVMInstanceClone | Clone PVM Instance parameters
 
 try:
     # Clone a PVMInstance
@@ -158,9 +158,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **pvm_instance_id** | **str**| PCloud PVM Instance ID | 
- **body** | [**PVMInstanceClone**](PVMInstanceClone.md)| Clone PVM Instance parameters | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **pvm_instance_id** | **str**| PCloud PVM Instance ID |
+ **body** | [**PVMInstanceClone**](PVMInstanceClone.md)| Clone PVM Instance parameters |
 
 ### Return type
 
@@ -186,12 +186,12 @@ List all console languages
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudPVMInstancesApi()
+api_instance = ip4g.PCloudPVMInstancesApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 pvm_instance_id = 'pvm_instance_id_example' # str | PCloud PVM Instance ID
 
@@ -207,8 +207,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **pvm_instance_id** | **str**| PCloud PVM Instance ID | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **pvm_instance_id** | **str**| PCloud PVM Instance ID |
 
 ### Return type
 
@@ -234,12 +234,12 @@ Generate the noVNC Console URL
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudPVMInstancesApi()
+api_instance = ip4g.PCloudPVMInstancesApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 pvm_instance_id = 'pvm_instance_id_example' # str | PCloud PVM Instance ID
 
@@ -255,8 +255,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **pvm_instance_id** | **str**| PCloud PVM Instance ID | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **pvm_instance_id** | **str**| PCloud PVM Instance ID |
 
 ### Return type
 
@@ -282,15 +282,15 @@ Update PVMInstance console laguage code
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudPVMInstancesApi()
+api_instance = ip4g.PCloudPVMInstancesApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 pvm_instance_id = 'pvm_instance_id_example' # str | PCloud PVM Instance ID
-body = swagger_client.ConsoleLanguage() # ConsoleLanguage | Parameters to update a PVMInstance console required codepage
+body = ip4g.ConsoleLanguage() # ConsoleLanguage | Parameters to update a PVMInstance console required codepage
 
 try:
     # Update PVMInstance console laguage code
@@ -304,9 +304,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **pvm_instance_id** | **str**| PCloud PVM Instance ID | 
- **body** | [**ConsoleLanguage**](ConsoleLanguage.md)| Parameters to update a PVMInstance console required codepage | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **pvm_instance_id** | **str**| PCloud PVM Instance ID |
+ **body** | [**ConsoleLanguage**](ConsoleLanguage.md)| Parameters to update a PVMInstance console required codepage |
 
 ### Return type
 
@@ -332,12 +332,12 @@ Delete a PCloud PVM Instance
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudPVMInstancesApi()
+api_instance = ip4g.PCloudPVMInstancesApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 pvm_instance_id = 'pvm_instance_id_example' # str | PCloud PVM Instance ID
 delete_data_volumes = true # bool | Indicates if all data volumes attached to the PVMInstance should be deleted when deleting the PVMInstance. Shared data volumes will be deleted if there are no other PVMInstances attached. (optional)
@@ -354,9 +354,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **pvm_instance_id** | **str**| PCloud PVM Instance ID | 
- **delete_data_volumes** | **bool**| Indicates if all data volumes attached to the PVMInstance should be deleted when deleting the PVMInstance. Shared data volumes will be deleted if there are no other PVMInstances attached. | [optional] 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **pvm_instance_id** | **str**| PCloud PVM Instance ID |
+ **delete_data_volumes** | **bool**| Indicates if all data volumes attached to the PVMInstance should be deleted when deleting the PVMInstance. Shared data volumes will be deleted if there are no other PVMInstances attached. | [optional]
 
 ### Return type
 
@@ -382,12 +382,12 @@ Get a PVM Instance's current state/information
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudPVMInstancesApi()
+api_instance = ip4g.PCloudPVMInstancesApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 pvm_instance_id = 'pvm_instance_id_example' # str | PCloud PVM Instance ID
 
@@ -403,8 +403,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **pvm_instance_id** | **str**| PCloud PVM Instance ID | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **pvm_instance_id** | **str**| PCloud PVM Instance ID |
 
 ### Return type
 
@@ -430,12 +430,12 @@ Get all the pvm instances for this cloud instance
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudPVMInstancesApi()
+api_instance = ip4g.PCloudPVMInstancesApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 
 try:
@@ -450,7 +450,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
 
 ### Return type
 
@@ -476,16 +476,16 @@ Remove all Address of Network from a PVM Instance
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudPVMInstancesApi()
+api_instance = ip4g.PCloudPVMInstancesApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 pvm_instance_id = 'pvm_instance_id_example' # str | PCloud PVM Instance ID
 network_id = 'network_id_example' # str | Network ID
-body = swagger_client.PVMInstanceRemoveNetwork() # PVMInstanceRemoveNetwork | Remove a network from PVM Instance parameters (optional)
+body = ip4g.PVMInstanceRemoveNetwork() # PVMInstanceRemoveNetwork | Remove a network from PVM Instance parameters (optional)
 
 try:
     # Remove all Address of Network from a PVM Instance
@@ -499,10 +499,10 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **pvm_instance_id** | **str**| PCloud PVM Instance ID | 
- **network_id** | **str**| Network ID | 
- **body** | [**PVMInstanceRemoveNetwork**](PVMInstanceRemoveNetwork.md)| Remove a network from PVM Instance parameters | [optional] 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **pvm_instance_id** | **str**| PCloud PVM Instance ID |
+ **network_id** | **str**| Network ID |
+ **body** | [**PVMInstanceRemoveNetwork**](PVMInstanceRemoveNetwork.md)| Remove a network from PVM Instance parameters | [optional]
 
 ### Return type
 
@@ -528,12 +528,12 @@ Get a PVM Instance's network information
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudPVMInstancesApi()
+api_instance = ip4g.PCloudPVMInstancesApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 pvm_instance_id = 'pvm_instance_id_example' # str | PCloud PVM Instance ID
 network_id = 'network_id_example' # str | Network ID
@@ -550,9 +550,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **pvm_instance_id** | **str**| PCloud PVM Instance ID | 
- **network_id** | **str**| Network ID | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **pvm_instance_id** | **str**| PCloud PVM Instance ID |
+ **network_id** | **str**| Network ID |
 
 ### Return type
 
@@ -578,12 +578,12 @@ Get all networks for this PVM Instance
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudPVMInstancesApi()
+api_instance = ip4g.PCloudPVMInstancesApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 pvm_instance_id = 'pvm_instance_id_example' # str | PCloud PVM Instance ID
 
@@ -599,8 +599,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **pvm_instance_id** | **str**| PCloud PVM Instance ID | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **pvm_instance_id** | **str**| PCloud PVM Instance ID |
 
 ### Return type
 
@@ -626,15 +626,15 @@ Perform network addition
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudPVMInstancesApi()
+api_instance = ip4g.PCloudPVMInstancesApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 pvm_instance_id = 'pvm_instance_id_example' # str | PCloud PVM Instance ID
-body = swagger_client.PVMInstanceAddNetwork() # PVMInstanceAddNetwork | Add network to PVM Instance parameters
+body = ip4g.PVMInstanceAddNetwork() # PVMInstanceAddNetwork | Add network to PVM Instance parameters
 
 try:
     # Perform network addition
@@ -648,9 +648,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **pvm_instance_id** | **str**| PCloud PVM Instance ID | 
- **body** | [**PVMInstanceAddNetwork**](PVMInstanceAddNetwork.md)| Add network to PVM Instance parameters | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **pvm_instance_id** | **str**| PCloud PVM Instance ID |
+ **body** | [**PVMInstanceAddNetwork**](PVMInstanceAddNetwork.md)| Add network to PVM Instance parameters |
 
 ### Return type
 
@@ -676,15 +676,15 @@ Perform an operation on a PVMInstance
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudPVMInstancesApi()
+api_instance = ip4g.PCloudPVMInstancesApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 pvm_instance_id = 'pvm_instance_id_example' # str | PCloud PVM Instance ID
-body = swagger_client.PVMInstanceOperation() # PVMInstanceOperation | Parameters for the desired operations
+body = ip4g.PVMInstanceOperation() # PVMInstanceOperation | Parameters for the desired operations
 
 try:
     # Perform an operation on a PVMInstance
@@ -698,9 +698,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **pvm_instance_id** | **str**| PCloud PVM Instance ID | 
- **body** | [**PVMInstanceOperation**](PVMInstanceOperation.md)| Parameters for the desired operations | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **pvm_instance_id** | **str**| PCloud PVM Instance ID |
+ **body** | [**PVMInstanceOperation**](PVMInstanceOperation.md)| Parameters for the desired operations |
 
 ### Return type
 
@@ -726,14 +726,14 @@ Create a new Power VM Instance
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudPVMInstancesApi()
+api_instance = ip4g.PCloudPVMInstancesApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
-body = swagger_client.PVMInstanceCreate() # PVMInstanceCreate | Parameters for the creation of a new Power VM Instance
+body = ip4g.PVMInstanceCreate() # PVMInstanceCreate | Parameters for the creation of a new Power VM Instance
 skip_host_validation = true # bool | Option to skip host validation on PVMInstance Create API (optional)
 
 try:
@@ -748,9 +748,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **body** | [**PVMInstanceCreate**](PVMInstanceCreate.md)| Parameters for the creation of a new Power VM Instance | 
- **skip_host_validation** | **bool**| Option to skip host validation on PVMInstance Create API | [optional] 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **body** | [**PVMInstanceCreate**](PVMInstanceCreate.md)| Parameters for the creation of a new Power VM Instance |
+ **skip_host_validation** | **bool**| Option to skip host validation on PVMInstance Create API | [optional]
 
 ### Return type
 
@@ -776,15 +776,15 @@ Update a PCloud PVM Instance
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudPVMInstancesApi()
+api_instance = ip4g.PCloudPVMInstancesApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 pvm_instance_id = 'pvm_instance_id_example' # str | PCloud PVM Instance ID
-body = swagger_client.PVMInstanceUpdate() # PVMInstanceUpdate | Parameters to update a PCloud PVM Instance
+body = ip4g.PVMInstanceUpdate() # PVMInstanceUpdate | Parameters to update a PCloud PVM Instance
 
 try:
     # Update a PCloud PVM Instance
@@ -798,9 +798,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **pvm_instance_id** | **str**| PCloud PVM Instance ID | 
- **body** | [**PVMInstanceUpdate**](PVMInstanceUpdate.md)| Parameters to update a PCloud PVM Instance | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **pvm_instance_id** | **str**| PCloud PVM Instance ID |
+ **body** | [**PVMInstanceUpdate**](PVMInstanceUpdate.md)| Parameters to update a PCloud PVM Instance |
 
 ### Return type
 
@@ -826,12 +826,12 @@ Get all snapshots for this PVM Instance
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudPVMInstancesApi()
+api_instance = ip4g.PCloudPVMInstancesApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 pvm_instance_id = 'pvm_instance_id_example' # str | PCloud PVM Instance ID
 
@@ -847,8 +847,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **pvm_instance_id** | **str**| PCloud PVM Instance ID | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **pvm_instance_id** | **str**| PCloud PVM Instance ID |
 
 ### Return type
 
@@ -874,15 +874,15 @@ Create a PVM Instance snapshot
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudPVMInstancesApi()
+api_instance = ip4g.PCloudPVMInstancesApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 pvm_instance_id = 'pvm_instance_id_example' # str | PCloud PVM Instance ID
-body = swagger_client.SnapshotCreate() # SnapshotCreate | PVM Instance snapshot create parameters
+body = ip4g.SnapshotCreate() # SnapshotCreate | PVM Instance snapshot create parameters
 
 try:
     # Create a PVM Instance snapshot
@@ -896,9 +896,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **pvm_instance_id** | **str**| PCloud PVM Instance ID | 
- **body** | [**SnapshotCreate**](SnapshotCreate.md)| PVM Instance snapshot create parameters | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **pvm_instance_id** | **str**| PCloud PVM Instance ID |
+ **body** | [**SnapshotCreate**](SnapshotCreate.md)| PVM Instance snapshot create parameters |
 
 ### Return type
 
@@ -924,16 +924,16 @@ Restore a PVM Instance snapshot
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudPVMInstancesApi()
+api_instance = ip4g.PCloudPVMInstancesApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 pvm_instance_id = 'pvm_instance_id_example' # str | PCloud PVM Instance ID
 snapshot_id = 'snapshot_id_example' # str | PVM Instance snapshot id
-body = swagger_client.SnapshotRestore() # SnapshotRestore | PVM Instance snapshot restore parameters
+body = ip4g.SnapshotRestore() # SnapshotRestore | PVM Instance snapshot restore parameters
 restore_fail_action = 'restore_fail_action_example' # str | Action to take on a failed snapshot restore (optional)
 
 try:
@@ -948,11 +948,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **pvm_instance_id** | **str**| PCloud PVM Instance ID | 
- **snapshot_id** | **str**| PVM Instance snapshot id | 
- **body** | [**SnapshotRestore**](SnapshotRestore.md)| PVM Instance snapshot restore parameters | 
- **restore_fail_action** | **str**| Action to take on a failed snapshot restore | [optional] 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **pvm_instance_id** | **str**| PCloud PVM Instance ID |
+ **snapshot_id** | **str**| PVM Instance snapshot id |
+ **body** | [**SnapshotRestore**](SnapshotRestore.md)| PVM Instance snapshot restore parameters |
+ **restore_fail_action** | **str**| Action to take on a failed snapshot restore | [optional]
 
 ### Return type
 
@@ -978,12 +978,12 @@ Get detail of last capture job
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudPVMInstancesApi()
+api_instance = ip4g.PCloudPVMInstancesApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 pvm_instance_id = 'pvm_instance_id_example' # str | PCloud PVM Instance ID
 
@@ -999,8 +999,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **pvm_instance_id** | **str**| PCloud PVM Instance ID | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **pvm_instance_id** | **str**| PCloud PVM Instance ID |
 
 ### Return type
 
@@ -1026,15 +1026,15 @@ Add a capture pvm-instance to the jobs queue
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudPVMInstancesApi()
+api_instance = ip4g.PCloudPVMInstancesApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 pvm_instance_id = 'pvm_instance_id_example' # str | PCloud PVM Instance ID
-body = swagger_client.PVMInstanceCapture() # PVMInstanceCapture | Parameters for the capture
+body = ip4g.PVMInstanceCapture() # PVMInstanceCapture | Parameters for the capture
 
 try:
     # Add a capture pvm-instance to the jobs queue
@@ -1048,9 +1048,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **pvm_instance_id** | **str**| PCloud PVM Instance ID | 
- **body** | [**PVMInstanceCapture**](PVMInstanceCapture.md)| Parameters for the capture | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **pvm_instance_id** | **str**| PCloud PVM Instance ID |
+ **body** | [**PVMInstanceCapture**](PVMInstanceCapture.md)| Parameters for the capture |
 
 ### Return type
 
@@ -1066,4 +1066,3 @@ No authorization required
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-

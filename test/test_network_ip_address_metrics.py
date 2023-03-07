@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.network_ip_address_metrics import NetworkIpAddressMetrics  # noqa: E501
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.models.network_ip_address_metrics import NetworkIpAddressMetrics  # noqa: E501
+from ip4g.rest import ApiException
 
 
 class TestNetworkIpAddressMetrics(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestNetworkIpAddressMetrics(unittest.TestCase):
     def testNetworkIpAddressMetrics(self):
         """Test NetworkIpAddressMetrics"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.network_ip_address_metrics.NetworkIpAddressMetrics()  # noqa: E501
+        # model = ip4g.models.network_ip_address_metrics.NetworkIpAddressMetrics()  # noqa: E501
         pass
 
 

@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.snapshot_restore import SnapshotRestore  # noqa: E501
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.models.snapshot_restore import SnapshotRestore  # noqa: E501
+from ip4g.rest import ApiException
 
 
 class TestSnapshotRestore(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestSnapshotRestore(unittest.TestCase):
     def testSnapshotRestore(self):
         """Test SnapshotRestore"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.snapshot_restore.SnapshotRestore()  # noqa: E501
+        # model = ip4g.models.snapshot_restore.SnapshotRestore()  # noqa: E501
         pass
 
 

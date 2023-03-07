@@ -1,4 +1,4 @@
-# swagger_client.PCloudInstancesApi
+# ip4g.PCloudInstancesApi
 
 All URIs are relative to *https://service-broker-api.staging.gpcloudtest.com*
 
@@ -18,12 +18,12 @@ Delete a Power Cloud Instance
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudInstancesApi()
+api_instance = ip4g.PCloudInstancesApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 
 try:
@@ -38,7 +38,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
 
 ### Return type
 
@@ -64,12 +64,12 @@ Get a Cloud Instance's current state/information
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudInstancesApi()
+api_instance = ip4g.PCloudInstancesApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 
 try:
@@ -84,7 +84,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
 
 ### Return type
 
@@ -110,14 +110,14 @@ Update / Upgrade a Cloud Instance
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudInstancesApi()
+api_instance = ip4g.PCloudInstancesApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
-body = swagger_client.CloudInstanceUpdate() # CloudInstanceUpdate | Parameters for updating a Power Cloud Instance
+body = ip4g.CloudInstanceUpdate() # CloudInstanceUpdate | Parameters for updating a Power Cloud Instance
 
 try:
     # Update / Upgrade a Cloud Instance
@@ -131,8 +131,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **body** | [**CloudInstanceUpdate**](CloudInstanceUpdate.md)| Parameters for updating a Power Cloud Instance | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **body** | [**CloudInstanceUpdate**](CloudInstanceUpdate.md)| Parameters for updating a Power Cloud Instance |
 
 ### Return type
 
@@ -148,4 +148,3 @@ No authorization required
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-

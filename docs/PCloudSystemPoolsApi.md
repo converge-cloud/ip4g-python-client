@@ -1,4 +1,4 @@
-# swagger_client.PCloudSystemPoolsApi
+# ip4g.PCloudSystemPoolsApi
 
 All URIs are relative to *https://service-broker-api.staging.gpcloudtest.com*
 
@@ -16,12 +16,12 @@ List of available system pools within a particular DataCenter
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudSystemPoolsApi()
+api_instance = ip4g.PCloudSystemPoolsApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 
 try:
@@ -36,7 +36,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
 
 ### Return type
 
@@ -52,4 +52,3 @@ No authorization required
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-

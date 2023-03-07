@@ -15,16 +15,16 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.api.iaas_service_broker_api import IaasServiceBrokerApi  # noqa: E501
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.api.iaas_service_broker_api import IaasServiceBrokerApi  # noqa: E501
+from ip4g.rest import ApiException
 
 
 class TestIaasServiceBrokerApi(unittest.TestCase):
     """IaasServiceBrokerApi unit test stubs"""
 
     def setUp(self):
-        self.api = swagger_client.api.iaas_service_broker_api.IaasServiceBrokerApi()  # noqa: E501
+        self.api = ip4g.api.iaas_service_broker_api.IaasServiceBrokerApi()  # noqa: E501
 
     def tearDown(self):
         pass

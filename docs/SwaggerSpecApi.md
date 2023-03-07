@@ -1,4 +1,4 @@
-# swagger_client.SwaggerSpecApi
+# ip4g.SwaggerSpecApi
 
 All URIs are relative to *https://service-broker-api.staging.gpcloudtest.com*
 
@@ -16,12 +16,12 @@ Get swagger json spec
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.SwaggerSpecApi()
+api_instance = ip4g.SwaggerSpecApi()
 
 try:
     # Get swagger json spec
@@ -48,4 +48,3 @@ No authorization required
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-

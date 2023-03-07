@@ -15,16 +15,16 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.api.authentication_api import AuthenticationApi  # noqa: E501
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.api.authentication_api import AuthenticationApi  # noqa: E501
+from ip4g.rest import ApiException
 
 
 class TestAuthenticationApi(unittest.TestCase):
     """AuthenticationApi unit test stubs"""
 
     def setUp(self):
-        self.api = swagger_client.api.authentication_api.AuthenticationApi()  # noqa: E501
+        self.api = ip4g.api.authentication_api.AuthenticationApi()  # noqa: E501
 
     def tearDown(self):
         pass

@@ -1,4 +1,4 @@
-# swagger_client.PCloudJobsApi
+# ip4g.PCloudJobsApi
 
 All URIs are relative to *https://service-broker-api.staging.gpcloudtest.com*
 
@@ -18,12 +18,12 @@ Delete a cloud instance job
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudJobsApi()
+api_instance = ip4g.PCloudJobsApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 job_id = 'job_id_example' # str | PCloud Job ID
 
@@ -39,8 +39,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **job_id** | **str**| PCloud Job ID | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **job_id** | **str**| PCloud Job ID |
 
 ### Return type
 
@@ -66,12 +66,12 @@ List the detail of a job
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudJobsApi()
+api_instance = ip4g.PCloudJobsApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 job_id = 'job_id_example' # str | PCloud Job ID
 
@@ -87,8 +87,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **job_id** | **str**| PCloud Job ID | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **job_id** | **str**| PCloud Job ID |
 
 ### Return type
 
@@ -114,12 +114,12 @@ List up to the last 5 jobs initiated by the cloud instance
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudJobsApi()
+api_instance = ip4g.PCloudJobsApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 operation_id = 'operation_id_example' # str | Operation ID to filter jobs (optional) (optional)
 operation_target = 'operation_target_example' # str | Operation target to filter jobs (optional) (optional)
@@ -137,10 +137,10 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **operation_id** | **str**| Operation ID to filter jobs (optional) | [optional] 
- **operation_target** | **str**| Operation target to filter jobs (optional) | [optional] 
- **operation_action** | **str**| Operation action to filter jobs (optional) vmCapture - includes operation action value (vmCapture) imageExport - includes operation action value (imageExport) imageImport - includes operation action value (imageImport) storage - includes operation action values (vmCapture,imageExport,imageImport) | [optional] 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **operation_id** | **str**| Operation ID to filter jobs (optional) | [optional]
+ **operation_target** | **str**| Operation target to filter jobs (optional) | [optional]
+ **operation_action** | **str**| Operation action to filter jobs (optional) vmCapture - includes operation action value (vmCapture) imageExport - includes operation action value (imageExport) imageImport - includes operation action value (imageImport) storage - includes operation action values (vmCapture,imageExport,imageImport) | [optional]
 
 ### Return type
 
@@ -156,4 +156,3 @@ No authorization required
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-

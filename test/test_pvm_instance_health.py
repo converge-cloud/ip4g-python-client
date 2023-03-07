@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.pvm_instance_health import PVMInstanceHealth  # noqa: E501
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.models.pvm_instance_health import PVMInstanceHealth  # noqa: E501
+from ip4g.rest import ApiException
 
 
 class TestPVMInstanceHealth(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestPVMInstanceHealth(unittest.TestCase):
     def testPVMInstanceHealth(self):
         """Test PVMInstanceHealth"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.pvm_instance_health.PVMInstanceHealth()  # noqa: E501
+        # model = ip4g.models.pvm_instance_health.PVMInstanceHealth()  # noqa: E501
         pass
 
 

@@ -15,16 +15,16 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.api.p_cloud_images_api import PCloudImagesApi  # noqa: E501
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.api.p_cloud_images_api import PCloudImagesApi  # noqa: E501
+from ip4g.rest import ApiException
 
 
 class TestPCloudImagesApi(unittest.TestCase):
     """PCloudImagesApi unit test stubs"""
 
     def setUp(self):
-        self.api = swagger_client.api.p_cloud_images_api.PCloudImagesApi()  # noqa: E501
+        self.api = ip4g.api.p_cloud_images_api.PCloudImagesApi()  # noqa: E501
 
     def tearDown(self):
         pass

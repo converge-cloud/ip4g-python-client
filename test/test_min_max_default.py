@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.min_max_default import MinMaxDefault  # noqa: E501
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.models.min_max_default import MinMaxDefault  # noqa: E501
+from ip4g.rest import ApiException
 
 
 class TestMinMaxDefault(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestMinMaxDefault(unittest.TestCase):
     def testMinMaxDefault(self):
         """Test MinMaxDefault"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.min_max_default.MinMaxDefault()  # noqa: E501
+        # model = ip4g.models.min_max_default.MinMaxDefault()  # noqa: E501
         pass
 
 

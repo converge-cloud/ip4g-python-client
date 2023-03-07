@@ -24,7 +24,7 @@ pip install git+https://github.com//.git
 
 Then import the package:
 ```python
-import swagger_client 
+import ip4g
 ```
 
 ### Setuptools
@@ -38,7 +38,7 @@ python setup.py install --user
 
 Then import the package:
 ```python
-import swagger_client
+import ip4g
 ```
 
 ## Getting Started
@@ -48,12 +48,12 @@ Please follow the [installation procedure](#installation--usage) and then run th
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AuthenticationApi(swagger_client.ApiClient(configuration))
+api_instance = ip4g.AuthenticationApi(ip4g.ApiClient(configuration))
 
 try:
     # Returns an accessToken (and set cookie)
@@ -177,13 +177,13 @@ Class | Method | HTTP request | Description
 *PCloudVolumesApi* | [**pcloud_v2_volumes_clone_post_v2**](docs/PCloudVolumesApi.md#pcloud_v2_volumes_clone_post_v2) | **POST** /pcloud/v2/cloud-instances/{cloud_instance_id}/volumes/clone | Create a volume clone for specified volumes
 *PCloudVolumesApi* | [**pcloud_v2_volumes_clonetasks_get**](docs/PCloudVolumesApi.md#pcloud_v2_volumes_clonetasks_get) | **GET** /pcloud/v2/cloud-instances/{cloud_instance_id}/volumes/clone-tasks/{clone_task_id} | Get the status of a volumes clone request for the specified clone task ID
 *PCloudVolumesApi* | [**pcloud_v2_volumes_post**](docs/PCloudVolumesApi.md#pcloud_v2_volumes_post) | **POST** /pcloud/v2/cloud-instances/{cloud_instance_id}/volumes | Create multiple data volumes from a single definition
-*PCloudVolumesApi* | [**pcloud_v2_volumesclone_cancel_post**](docs/PCloudVolumesApi.md#pcloud_v2_volumesclone_cancel_post) | **POST** /pcloud/v2/cloud-instances/{cloud_instance_id}/volumes-clone/{volumes_clone_id}/cancel | Cancel a volumes-clone request, initiates the Cleanup action Cleanup action performs the cleanup of the preparatory clones and snapshot volumes 
+*PCloudVolumesApi* | [**pcloud_v2_volumesclone_cancel_post**](docs/PCloudVolumesApi.md#pcloud_v2_volumesclone_cancel_post) | **POST** /pcloud/v2/cloud-instances/{cloud_instance_id}/volumes-clone/{volumes_clone_id}/cancel | Cancel a volumes-clone request, initiates the Cleanup action Cleanup action performs the cleanup of the preparatory clones and snapshot volumes
 *PCloudVolumesApi* | [**pcloud_v2_volumesclone_delete**](docs/PCloudVolumesApi.md#pcloud_v2_volumesclone_delete) | **DELETE** /pcloud/v2/cloud-instances/{cloud_instance_id}/volumes-clone/{volumes_clone_id} | Delete a volumes-clone request
-*PCloudVolumesApi* | [**pcloud_v2_volumesclone_execute_post**](docs/PCloudVolumesApi.md#pcloud_v2_volumesclone_execute_post) | **POST** /pcloud/v2/cloud-instances/{cloud_instance_id}/volumes-clone/{volumes_clone_id}/execute | Initiate the Execute action for a volumes-clone request Execute action creates the cloned volumes using the volume snapshots 
+*PCloudVolumesApi* | [**pcloud_v2_volumesclone_execute_post**](docs/PCloudVolumesApi.md#pcloud_v2_volumesclone_execute_post) | **POST** /pcloud/v2/cloud-instances/{cloud_instance_id}/volumes-clone/{volumes_clone_id}/execute | Initiate the Execute action for a volumes-clone request Execute action creates the cloned volumes using the volume snapshots
 *PCloudVolumesApi* | [**pcloud_v2_volumesclone_get**](docs/PCloudVolumesApi.md#pcloud_v2_volumesclone_get) | **GET** /pcloud/v2/cloud-instances/{cloud_instance_id}/volumes-clone/{volumes_clone_id} | Get the details for a volumes-clone request
 *PCloudVolumesApi* | [**pcloud_v2_volumesclone_getall**](docs/PCloudVolumesApi.md#pcloud_v2_volumesclone_getall) | **GET** /pcloud/v2/cloud-instances/{cloud_instance_id}/volumes-clone | Get the list of volumes-clone request for a cloud instance
-*PCloudVolumesApi* | [**pcloud_v2_volumesclone_post**](docs/PCloudVolumesApi.md#pcloud_v2_volumesclone_post) | **POST** /pcloud/v2/cloud-instances/{cloud_instance_id}/volumes-clone | Create a new volumes clone request and initiates the Prepare action   Requires a minimum of two volumes   Requires a minimum of one volume to be in the &#39;in-use&#39; state   Requires a unique volumes clone name   Prepare action does the preparatory work for creating the snapshot volumes 
-*PCloudVolumesApi* | [**pcloud_v2_volumesclone_start_post**](docs/PCloudVolumesApi.md#pcloud_v2_volumesclone_start_post) | **POST** /pcloud/v2/cloud-instances/{cloud_instance_id}/volumes-clone/{volumes_clone_id}/start | Initiate the Start action for a volumes-clone request Start action starts the consistency group to initiate the flash copy 
+*PCloudVolumesApi* | [**pcloud_v2_volumesclone_post**](docs/PCloudVolumesApi.md#pcloud_v2_volumesclone_post) | **POST** /pcloud/v2/cloud-instances/{cloud_instance_id}/volumes-clone | Create a new volumes clone request and initiates the Prepare action   Requires a minimum of two volumes   Requires a minimum of one volume to be in the &#39;in-use&#39; state   Requires a unique volumes clone name   Prepare action does the preparatory work for creating the snapshot volumes
+*PCloudVolumesApi* | [**pcloud_v2_volumesclone_start_post**](docs/PCloudVolumesApi.md#pcloud_v2_volumesclone_start_post) | **POST** /pcloud/v2/cloud-instances/{cloud_instance_id}/volumes-clone/{volumes_clone_id}/start | Initiate the Start action for a volumes-clone request Start action starts the consistency group to initiate the flash copy
 *PCloudVolumesApi* | [**pcloud_volumes_clone_post**](docs/PCloudVolumesApi.md#pcloud_volumes_clone_post) | **POST** /pcloud/v1/cloud-instances/{cloud_instance_id}/volumes/clone | Create a volume clone for specified volumes
 *StorageTypesApi* | [**service_broker_storagetypes_get**](docs/StorageTypesApi.md#service_broker_storagetypes_get) | **GET** /broker/v1/storage-types | Available storage types in a region
 *SwaggerSpecApi* | [**service_broker_swaggerspec**](docs/SwaggerSpecApi.md#service_broker_swaggerspec) | **GET** /v1/swagger.json | Get swagger json spec
@@ -342,4 +342,3 @@ Class | Method | HTTP request | Description
 ## Author
 
 ip4g@convergetp.com
-

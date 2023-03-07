@@ -1,4 +1,4 @@
-# swagger_client.PCloudNetworksApi
+# ip4g.PCloudNetworksApi
 
 All URIs are relative to *https://service-broker-api.staging.gpcloudtest.com*
 
@@ -25,12 +25,12 @@ Delete a Network
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudNetworksApi()
+api_instance = ip4g.PCloudNetworksApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 network_id = 'network_id_example' # str | Network ID
 
@@ -46,8 +46,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **network_id** | **str**| Network ID | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **network_id** | **str**| Network ID |
 
 ### Return type
 
@@ -73,12 +73,12 @@ Get a network's current state/information
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudNetworksApi()
+api_instance = ip4g.PCloudNetworksApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 network_id = 'network_id_example' # str | Network ID
 
@@ -94,8 +94,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **network_id** | **str**| Network ID | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **network_id** | **str**| Network ID |
 
 ### Return type
 
@@ -121,12 +121,12 @@ Get all networks in this cloud instance
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudNetworksApi()
+api_instance = ip4g.PCloudNetworksApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 filter = 'filter_example' # str | A filter expression that filters resources listed in the response (optional)
 
@@ -142,8 +142,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **filter** | **str**| A filter expression that filters resources listed in the response | [optional] 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **filter** | **str**| A filter expression that filters resources listed in the response | [optional]
 
 ### Return type
 
@@ -169,12 +169,12 @@ Delete a Network Port
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudNetworksApi()
+api_instance = ip4g.PCloudNetworksApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 network_id = 'network_id_example' # str | Network ID
 port_id = 'port_id_example' # str | Port ID
@@ -191,9 +191,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **network_id** | **str**| Network ID | 
- **port_id** | **str**| Port ID | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **network_id** | **str**| Network ID |
+ **port_id** | **str**| Port ID |
 
 ### Return type
 
@@ -219,12 +219,12 @@ Get a port's information
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudNetworksApi()
+api_instance = ip4g.PCloudNetworksApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 network_id = 'network_id_example' # str | Network ID
 port_id = 'port_id_example' # str | Port ID
@@ -241,9 +241,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **network_id** | **str**| Network ID | 
- **port_id** | **str**| Port ID | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **network_id** | **str**| Network ID |
+ **port_id** | **str**| Port ID |
 
 ### Return type
 
@@ -269,12 +269,12 @@ Get all ports for this network
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudNetworksApi()
+api_instance = ip4g.PCloudNetworksApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 network_id = 'network_id_example' # str | Network ID
 
@@ -290,8 +290,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **network_id** | **str**| Network ID | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **network_id** | **str**| Network ID |
 
 ### Return type
 
@@ -317,15 +317,15 @@ Perform port addition, deletion, and listing
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudNetworksApi()
+api_instance = ip4g.PCloudNetworksApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 network_id = 'network_id_example' # str | Network ID
-body = swagger_client.NetworkPortCreate() # NetworkPortCreate | Create a Network Port (optional)
+body = ip4g.NetworkPortCreate() # NetworkPortCreate | Create a Network Port (optional)
 
 try:
     # Perform port addition, deletion, and listing
@@ -339,9 +339,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **network_id** | **str**| Network ID | 
- **body** | [**NetworkPortCreate**](NetworkPortCreate.md)| Create a Network Port | [optional] 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **network_id** | **str**| Network ID |
+ **body** | [**NetworkPortCreate**](NetworkPortCreate.md)| Create a Network Port | [optional]
 
 ### Return type
 
@@ -367,16 +367,16 @@ Update a port's information
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudNetworksApi()
+api_instance = ip4g.PCloudNetworksApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 network_id = 'network_id_example' # str | Network ID
 port_id = 'port_id_example' # str | Port ID
-body = swagger_client.NetworkPortUpdate() # NetworkPortUpdate | Parameters for updating a Port
+body = ip4g.NetworkPortUpdate() # NetworkPortUpdate | Parameters for updating a Port
 
 try:
     # Update a port's information
@@ -390,10 +390,10 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **network_id** | **str**| Network ID | 
- **port_id** | **str**| Port ID | 
- **body** | [**NetworkPortUpdate**](NetworkPortUpdate.md)| Parameters for updating a Port | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **network_id** | **str**| Network ID |
+ **port_id** | **str**| Port ID |
+ **body** | [**NetworkPortUpdate**](NetworkPortUpdate.md)| Parameters for updating a Port |
 
 ### Return type
 
@@ -419,14 +419,14 @@ Create a new Network
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudNetworksApi()
+api_instance = ip4g.PCloudNetworksApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
-body = swagger_client.NetworkCreate() # NetworkCreate | Parameters for the creation of a new network
+body = ip4g.NetworkCreate() # NetworkCreate | Parameters for the creation of a new network
 
 try:
     # Create a new Network
@@ -440,8 +440,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **body** | [**NetworkCreate**](NetworkCreate.md)| Parameters for the creation of a new network | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **body** | [**NetworkCreate**](NetworkCreate.md)| Parameters for the creation of a new network |
 
 ### Return type
 
@@ -467,15 +467,15 @@ Update a Network
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudNetworksApi()
+api_instance = ip4g.PCloudNetworksApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 network_id = 'network_id_example' # str | Network ID
-body = swagger_client.NetworkUpdate() # NetworkUpdate | Parameters to update a Network
+body = ip4g.NetworkUpdate() # NetworkUpdate | Parameters to update a Network
 
 try:
     # Update a Network
@@ -489,9 +489,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **network_id** | **str**| Network ID | 
- **body** | [**NetworkUpdate**](NetworkUpdate.md)| Parameters to update a Network | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **network_id** | **str**| Network ID |
+ **body** | [**NetworkUpdate**](NetworkUpdate.md)| Parameters to update a Network |
 
 ### Return type
 
@@ -507,4 +507,3 @@ No authorization required
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-

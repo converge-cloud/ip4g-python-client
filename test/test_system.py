@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.system import System  # noqa: E501
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.models.system import System  # noqa: E501
+from ip4g.rest import ApiException
 
 
 class TestSystem(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestSystem(unittest.TestCase):
     def testSystem(self):
         """Test System"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.system.System()  # noqa: E501
+        # model = ip4g.models.system.System()  # noqa: E501
         pass
 
 

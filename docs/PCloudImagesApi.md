@@ -1,4 +1,4 @@
-# swagger_client.PCloudImagesApi
+# ip4g.PCloudImagesApi
 
 All URIs are relative to *https://service-broker-api.staging.gpcloudtest.com*
 
@@ -26,12 +26,12 @@ Delete an Image from a Cloud Instance
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudImagesApi()
+api_instance = ip4g.PCloudImagesApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 image_id = 'image_id_example' # str | Image ID of a image
 
@@ -47,8 +47,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **image_id** | **str**| Image ID of a image | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **image_id** | **str**| Image ID of a image |
 
 ### Return type
 
@@ -74,15 +74,15 @@ Export an image
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudImagesApi()
+api_instance = ip4g.PCloudImagesApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 image_id = 'image_id_example' # str | Image ID of a image
-body = swagger_client.ExportImage() # ExportImage | Parameters for exporting an image
+body = ip4g.ExportImage() # ExportImage | Parameters for exporting an image
 
 try:
     # Export an image
@@ -96,9 +96,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **image_id** | **str**| Image ID of a image | 
- **body** | [**ExportImage**](ExportImage.md)| Parameters for exporting an image | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **image_id** | **str**| Image ID of a image |
+ **body** | [**ExportImage**](ExportImage.md)| Parameters for exporting an image |
 
 ### Return type
 
@@ -124,12 +124,12 @@ Detailed info of an image
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudImagesApi()
+api_instance = ip4g.PCloudImagesApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 image_id = 'image_id_example' # str | Image ID of a image
 
@@ -145,8 +145,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **image_id** | **str**| Image ID of a image | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **image_id** | **str**| Image ID of a image |
 
 ### Return type
 
@@ -172,12 +172,12 @@ List all images for this cloud instance
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudImagesApi()
+api_instance = ip4g.PCloudImagesApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 
 try:
@@ -192,7 +192,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
 
 ### Return type
 
@@ -218,14 +218,14 @@ Create a new Image (from available images)
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudImagesApi()
+api_instance = ip4g.PCloudImagesApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
-body = swagger_client.CreateImage() # CreateImage | Parameters for the creation of a new image from available images
+body = ip4g.CreateImage() # CreateImage | Parameters for the creation of a new image from available images
 
 try:
     # Create a new Image (from available images)
@@ -239,8 +239,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **body** | [**CreateImage**](CreateImage.md)| Parameters for the creation of a new image from available images | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **body** | [**CreateImage**](CreateImage.md)| Parameters for the creation of a new image from available images |
 
 ### Return type
 
@@ -266,12 +266,12 @@ Detailed info of an available stock image
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudImagesApi()
+api_instance = ip4g.PCloudImagesApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 image_id = 'image_id_example' # str | Image ID of a image
 
@@ -287,8 +287,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **image_id** | **str**| Image ID of a image | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **image_id** | **str**| Image ID of a image |
 
 ### Return type
 
@@ -314,12 +314,12 @@ List all available stock images
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudImagesApi()
+api_instance = ip4g.PCloudImagesApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 sap = true # bool | Include SAP images with get available stock images (optional)
 vtl = true # bool | Include VTL images with get available stock images (optional)
@@ -336,9 +336,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **sap** | **bool**| Include SAP images with get available stock images | [optional] 
- **vtl** | **bool**| Include VTL images with get available stock images | [optional] 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **sap** | **bool**| Include SAP images with get available stock images | [optional]
+ **vtl** | **bool**| Include VTL images with get available stock images | [optional]
 
 ### Return type
 
@@ -364,12 +364,12 @@ Deprecated for /pcloud/v1/cloud-instances/{cloud_instance_id}/stock-images/{imag
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudImagesApi()
+api_instance = ip4g.PCloudImagesApi()
 image_id = 'image_id_example' # str | Image ID of a image
 
 try:
@@ -384,7 +384,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **image_id** | **str**| Image ID of a image | 
+ **image_id** | **str**| Image ID of a image |
 
 ### Return type
 
@@ -410,12 +410,12 @@ Deprecated for /pcloud/v1/cloud-instances/{cloud_instance_id}/stock-images - Lis
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudImagesApi()
+api_instance = ip4g.PCloudImagesApi()
 sap = true # bool | Include SAP images with get available stock images (optional)
 vtl = true # bool | Include VTL images with get available stock images (optional)
 
@@ -431,8 +431,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sap** | **bool**| Include SAP images with get available stock images | [optional] 
- **vtl** | **bool**| Include VTL images with get available stock images | [optional] 
+ **sap** | **bool**| Include SAP images with get available stock images | [optional]
+ **vtl** | **bool**| Include VTL images with get available stock images | [optional]
 
 ### Return type
 
@@ -458,12 +458,12 @@ Get detail of last image export job
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudImagesApi()
+api_instance = ip4g.PCloudImagesApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 image_id = 'image_id_example' # str | Image ID of a image
 
@@ -479,8 +479,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **image_id** | **str**| Image ID of a image | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **image_id** | **str**| Image ID of a image |
 
 ### Return type
 
@@ -506,15 +506,15 @@ Add image export job to the jobs queue
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudImagesApi()
+api_instance = ip4g.PCloudImagesApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 image_id = 'image_id_example' # str | Image ID of a image
-body = swagger_client.ExportImage() # ExportImage | Parameters for the export
+body = ip4g.ExportImage() # ExportImage | Parameters for the export
 
 try:
     # Add image export job to the jobs queue
@@ -528,9 +528,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **image_id** | **str**| Image ID of a image | 
- **body** | [**ExportImage**](ExportImage.md)| Parameters for the export | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **image_id** | **str**| Image ID of a image |
+ **body** | [**ExportImage**](ExportImage.md)| Parameters for the export |
 
 ### Return type
 
@@ -546,4 +546,3 @@ No authorization required
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-

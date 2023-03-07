@@ -1,4 +1,4 @@
-# swagger_client.AuthenticationApi
+# ip4g.AuthenticationApi
 
 All URIs are relative to *https://service-broker-api.staging.gpcloudtest.com*
 
@@ -25,12 +25,12 @@ Returns an accessToken (and set cookie)
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AuthenticationApi()
+api_instance = ip4g.AuthenticationApi()
 
 try:
     # Returns an accessToken (and set cookie)
@@ -67,12 +67,12 @@ Request a authorization device code
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AuthenticationApi()
+api_instance = ip4g.AuthenticationApi()
 
 try:
     # Request a authorization device code
@@ -109,13 +109,13 @@ Poll for authorization device token
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AuthenticationApi()
-body = swagger_client.Body() # Body | Parameters for polling authorization device code
+api_instance = ip4g.AuthenticationApi()
+body = ip4g.Body() # Body | Parameters for polling authorization device code
 
 try:
     # Poll for authorization device token
@@ -129,7 +129,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**Body**](Body.md)| Parameters for polling authorization device code | 
+ **body** | [**Body**](Body.md)| Parameters for polling authorization device code |
 
 ### Return type
 
@@ -155,12 +155,12 @@ Information about current access token
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AuthenticationApi()
+api_instance = ip4g.AuthenticationApi()
 
 try:
     # Information about current access token
@@ -197,12 +197,12 @@ Information about current user
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AuthenticationApi()
+api_instance = ip4g.AuthenticationApi()
 
 try:
     # Information about current user
@@ -239,12 +239,12 @@ Login
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AuthenticationApi()
+api_instance = ip4g.AuthenticationApi()
 user_id = 'user_id_example' # str | The user id of the user (optional)
 redirect_url = 'redirect_url_example' # str | The URL to redirect to after login/registration (optional)
 access_type = 'online' # str | Determines if a refresh token is returned (optional) (default to online)
@@ -261,8 +261,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | **str**| The user id of the user | [optional] 
- **redirect_url** | **str**| The URL to redirect to after login/registration | [optional] 
+ **user_id** | **str**| The user id of the user | [optional]
+ **redirect_url** | **str**| The URL to redirect to after login/registration | [optional]
  **access_type** | **str**| Determines if a refresh token is returned | [optional] [default to online]
 
 ### Return type
@@ -289,12 +289,12 @@ Logout
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AuthenticationApi()
+api_instance = ip4g.AuthenticationApi()
 
 try:
     # Logout
@@ -331,12 +331,12 @@ Registration of a new Tenant and Login
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AuthenticationApi()
+api_instance = ip4g.AuthenticationApi()
 tenant_id = 'tenant_id_example' # str | Tenant ID of a pcloud tenant
 entitlement_id = 'entitlement_id_example' # str | Entitlement ID of for this tenant
 plan = 'plan_example' # str | Plan for this tenant and entitlement
@@ -356,12 +356,12 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tenant_id** | **str**| Tenant ID of a pcloud tenant | 
- **entitlement_id** | **str**| Entitlement ID of for this tenant | 
- **plan** | **str**| Plan for this tenant and entitlement | 
- **icn** | **str**| IBM Customer Number (ICN) for this tenant | 
- **regions** | [**list[str]**](str.md)| An array of regions matching the number of cloud-instances in the plan | 
- **redirect_url** | **str**| The URL to redirect to after login/registration | [optional] 
+ **tenant_id** | **str**| Tenant ID of a pcloud tenant |
+ **entitlement_id** | **str**| Entitlement ID of for this tenant |
+ **plan** | **str**| Plan for this tenant and entitlement |
+ **icn** | **str**| IBM Customer Number (ICN) for this tenant |
+ **regions** | [**list[str]**](str.md)| An array of regions matching the number of cloud-instances in the plan |
+ **redirect_url** | **str**| The URL to redirect to after login/registration | [optional]
 
 ### Return type
 
@@ -387,12 +387,12 @@ Associates the user with a tenant and returns an accessToken
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AuthenticationApi()
+api_instance = ip4g.AuthenticationApi()
 
 try:
     # Associates the user with a tenant and returns an accessToken
@@ -429,13 +429,13 @@ Request a new token from a refresh token
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.AuthenticationApi()
-body = swagger_client.TokenRequest() # TokenRequest | Parameters for requesting a new Token from a Refresh Token
+api_instance = ip4g.AuthenticationApi()
+body = ip4g.TokenRequest() # TokenRequest | Parameters for requesting a new Token from a Refresh Token
 
 try:
     # Request a new token from a refresh token
@@ -449,7 +449,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TokenRequest**](TokenRequest.md)| Parameters for requesting a new Token from a Refresh Token | 
+ **body** | [**TokenRequest**](TokenRequest.md)| Parameters for requesting a new Token from a Refresh Token |
 
 ### Return type
 
@@ -465,4 +465,3 @@ No authorization required
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-

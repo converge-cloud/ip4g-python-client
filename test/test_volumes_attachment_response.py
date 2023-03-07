@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.volumes_attachment_response import VolumesAttachmentResponse  # noqa: E501
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.models.volumes_attachment_response import VolumesAttachmentResponse  # noqa: E501
+from ip4g.rest import ApiException
 
 
 class TestVolumesAttachmentResponse(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestVolumesAttachmentResponse(unittest.TestCase):
     def testVolumesAttachmentResponse(self):
         """Test VolumesAttachmentResponse"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.volumes_attachment_response.VolumesAttachmentResponse()  # noqa: E501
+        # model = ip4g.models.volumes_attachment_response.VolumesAttachmentResponse()  # noqa: E501
         pass
 
 

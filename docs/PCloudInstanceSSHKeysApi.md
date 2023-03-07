@@ -1,4 +1,4 @@
-# swagger_client.PCloudInstanceSSHKeysApi
+# ip4g.PCloudInstanceSSHKeysApi
 
 All URIs are relative to *https://service-broker-api.staging.gpcloudtest.com*
 
@@ -20,12 +20,12 @@ Delete a CloudInstance's SSH key by name
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudInstanceSSHKeysApi()
+api_instance = ip4g.PCloudInstanceSSHKeysApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 sshkey_name = 'sshkey_name_example' # str | SSH key name for a pcloud tenant
 
@@ -41,8 +41,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **sshkey_name** | **str**| SSH key name for a pcloud tenant | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **sshkey_name** | **str**| SSH key name for a pcloud tenant |
 
 ### Return type
 
@@ -68,12 +68,12 @@ Get a CloudInstance's SSH Key by name
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudInstanceSSHKeysApi()
+api_instance = ip4g.PCloudInstanceSSHKeysApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 sshkey_name = 'sshkey_name_example' # str | SSH key name for a pcloud tenant
 
@@ -89,8 +89,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **sshkey_name** | **str**| SSH key name for a pcloud tenant | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **sshkey_name** | **str**| SSH key name for a pcloud tenant |
 
 ### Return type
 
@@ -116,12 +116,12 @@ List a CloudInstance's SSH Keys
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudInstanceSSHKeysApi()
+api_instance = ip4g.PCloudInstanceSSHKeysApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 
 try:
@@ -136,7 +136,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
 
 ### Return type
 
@@ -162,14 +162,14 @@ Add a new SSH key to Cloud Instance
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudInstanceSSHKeysApi()
+api_instance = ip4g.PCloudInstanceSSHKeysApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
-body = swagger_client.SSHKey() # SSHKey | Parameters for the creation of a new SSH key in Cloud Instance
+body = ip4g.SSHKey() # SSHKey | Parameters for the creation of a new SSH key in Cloud Instance
 
 try:
     # Add a new SSH key to Cloud Instance
@@ -183,8 +183,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **body** | [**SSHKey**](SSHKey.md)| Parameters for the creation of a new SSH key in Cloud Instance | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **body** | [**SSHKey**](SSHKey.md)| Parameters for the creation of a new SSH key in Cloud Instance |
 
 ### Return type
 
@@ -210,15 +210,15 @@ Update an SSH Key by SSH name
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudInstanceSSHKeysApi()
+api_instance = ip4g.PCloudInstanceSSHKeysApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 sshkey_name = 'sshkey_name_example' # str | SSH key name for a pcloud tenant
-body = swagger_client.SSHKey() # SSHKey | Parameters for updating a CloudInstance's SSH Key by name
+body = ip4g.SSHKey() # SSHKey | Parameters for updating a CloudInstance's SSH Key by name
 
 try:
     # Update an SSH Key by SSH name
@@ -232,9 +232,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **sshkey_name** | **str**| SSH key name for a pcloud tenant | 
- **body** | [**SSHKey**](SSHKey.md)| Parameters for updating a CloudInstance&#39;s SSH Key by name | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **sshkey_name** | **str**| SSH key name for a pcloud tenant |
+ **body** | [**SSHKey**](SSHKey.md)| Parameters for updating a CloudInstance&#39;s SSH Key by name |
 
 ### Return type
 
@@ -250,4 +250,3 @@ No authorization required
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-

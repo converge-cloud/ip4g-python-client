@@ -1,4 +1,4 @@
-# swagger_client.PCloudStorageCapacityApi
+# ip4g.PCloudStorageCapacityApi
 
 All URIs are relative to *https://service-broker-api.staging.gpcloudtest.com*
 
@@ -19,12 +19,12 @@ Storage capacity for a storage pool in a region
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudStorageCapacityApi()
+api_instance = ip4g.PCloudStorageCapacityApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 storage_pool_name = 'storage_pool_name_example' # str | Storage pool name
 
@@ -40,8 +40,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **storage_pool_name** | **str**| Storage pool name | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **storage_pool_name** | **str**| Storage pool name |
 
 ### Return type
 
@@ -67,12 +67,12 @@ Storage capacity for all available storage pools in a region
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudStorageCapacityApi()
+api_instance = ip4g.PCloudStorageCapacityApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 
 try:
@@ -87,7 +87,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
 
 ### Return type
 
@@ -113,12 +113,12 @@ Storage capacity for a storage type in a region
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudStorageCapacityApi()
+api_instance = ip4g.PCloudStorageCapacityApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 storage_type_name = 'storage_type_name_example' # str | Storage type name
 
@@ -134,8 +134,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **storage_type_name** | **str**| Storage type name | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **storage_type_name** | **str**| Storage type name |
 
 ### Return type
 
@@ -161,12 +161,12 @@ Storage capacity for all available storage types in a region
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudStorageCapacityApi()
+api_instance = ip4g.PCloudStorageCapacityApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 
 try:
@@ -181,7 +181,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
 
 ### Return type
 
@@ -197,4 +197,3 @@ No authorization required
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-

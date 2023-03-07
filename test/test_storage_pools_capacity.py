@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.storage_pools_capacity import StoragePoolsCapacity  # noqa: E501
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.models.storage_pools_capacity import StoragePoolsCapacity  # noqa: E501
+from ip4g.rest import ApiException
 
 
 class TestStoragePoolsCapacity(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestStoragePoolsCapacity(unittest.TestCase):
     def testStoragePoolsCapacity(self):
         """Test StoragePoolsCapacity"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.storage_pools_capacity.StoragePoolsCapacity()  # noqa: E501
+        # model = ip4g.models.storage_pools_capacity.StoragePoolsCapacity()  # noqa: E501
         pass
 
 

@@ -15,9 +15,9 @@ from __future__ import absolute_import
 
 import unittest
 
-import swagger_client
-from swagger_client.models.pvm_instance_multi_create import PVMInstanceMultiCreate  # noqa: E501
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.models.pvm_instance_multi_create import PVMInstanceMultiCreate  # noqa: E501
+from ip4g.rest import ApiException
 
 
 class TestPVMInstanceMultiCreate(unittest.TestCase):
@@ -32,7 +32,7 @@ class TestPVMInstanceMultiCreate(unittest.TestCase):
     def testPVMInstanceMultiCreate(self):
         """Test PVMInstanceMultiCreate"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = swagger_client.models.pvm_instance_multi_create.PVMInstanceMultiCreate()  # noqa: E501
+        # model = ip4g.models.pvm_instance_multi_create.PVMInstanceMultiCreate()  # noqa: E501
         pass
 
 

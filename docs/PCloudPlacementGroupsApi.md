@@ -1,4 +1,4 @@
-# swagger_client.PCloudPlacementGroupsApi
+# ip4g.PCloudPlacementGroupsApi
 
 All URIs are relative to *https://service-broker-api.staging.gpcloudtest.com*
 
@@ -21,12 +21,12 @@ Delete Server Placement Group
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudPlacementGroupsApi()
+api_instance = ip4g.PCloudPlacementGroupsApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 placement_group_id = 'placement_group_id_example' # str | Placement Group ID
 
@@ -42,8 +42,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **placement_group_id** | **str**| Placement Group ID | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **placement_group_id** | **str**| Placement Group ID |
 
 ### Return type
 
@@ -69,12 +69,12 @@ Get Server Placement Group detail
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudPlacementGroupsApi()
+api_instance = ip4g.PCloudPlacementGroupsApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 placement_group_id = 'placement_group_id_example' # str | Placement Group ID
 
@@ -90,8 +90,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **placement_group_id** | **str**| Placement Group ID | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **placement_group_id** | **str**| Placement Group ID |
 
 ### Return type
 
@@ -117,12 +117,12 @@ Get all Server Placement Groups
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudPlacementGroupsApi()
+api_instance = ip4g.PCloudPlacementGroupsApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 
 try:
@@ -137,7 +137,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
 
 ### Return type
 
@@ -163,15 +163,15 @@ Remove Server from Placement Group
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudPlacementGroupsApi()
+api_instance = ip4g.PCloudPlacementGroupsApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 placement_group_id = 'placement_group_id_example' # str | Placement Group ID
-body = swagger_client.PlacementGroupServer() # PlacementGroupServer | Parameters for removing a Server in a Placement Group
+body = ip4g.PlacementGroupServer() # PlacementGroupServer | Parameters for removing a Server in a Placement Group
 
 try:
     # Remove Server from Placement Group
@@ -185,9 +185,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **placement_group_id** | **str**| Placement Group ID | 
- **body** | [**PlacementGroupServer**](PlacementGroupServer.md)| Parameters for removing a Server in a Placement Group | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **placement_group_id** | **str**| Placement Group ID |
+ **body** | [**PlacementGroupServer**](PlacementGroupServer.md)| Parameters for removing a Server in a Placement Group |
 
 ### Return type
 
@@ -213,15 +213,15 @@ Add Server to Placement Group
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudPlacementGroupsApi()
+api_instance = ip4g.PCloudPlacementGroupsApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 placement_group_id = 'placement_group_id_example' # str | Placement Group ID
-body = swagger_client.PlacementGroupServer() # PlacementGroupServer | Parameters for adding a server to a Server Placement Group
+body = ip4g.PlacementGroupServer() # PlacementGroupServer | Parameters for adding a server to a Server Placement Group
 
 try:
     # Add Server to Placement Group
@@ -235,9 +235,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **placement_group_id** | **str**| Placement Group ID | 
- **body** | [**PlacementGroupServer**](PlacementGroupServer.md)| Parameters for adding a server to a Server Placement Group | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **placement_group_id** | **str**| Placement Group ID |
+ **body** | [**PlacementGroupServer**](PlacementGroupServer.md)| Parameters for adding a server to a Server Placement Group |
 
 ### Return type
 
@@ -263,14 +263,14 @@ Create a new Server Placement Group
 ```python
 from __future__ import print_function
 import time
-import swagger_client
-from swagger_client.rest import ApiException
+import ip4g
+from ip4g.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.PCloudPlacementGroupsApi()
+api_instance = ip4g.PCloudPlacementGroupsApi()
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
-body = swagger_client.PlacementGroupCreate() # PlacementGroupCreate | Parameters for the creation of a new Server Placement Group
+body = ip4g.PlacementGroupCreate() # PlacementGroupCreate | Parameters for the creation of a new Server Placement Group
 
 try:
     # Create a new Server Placement Group
@@ -284,8 +284,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
- **body** | [**PlacementGroupCreate**](PlacementGroupCreate.md)| Parameters for the creation of a new Server Placement Group | 
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **body** | [**PlacementGroupCreate**](PlacementGroupCreate.md)| Parameters for the creation of a new Server Placement Group |
 
 ### Return type
 
@@ -301,4 +301,3 @@ No authorization required
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
