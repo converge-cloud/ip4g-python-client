@@ -318,7 +318,7 @@ Class | Method | HTTP request | Description
 
 ## License
 
-This library is distributed under the (GNU General Public License Version 3)[LICENSE).
+This library is distributed under the [GNU General Public License Version 3](LICENSE).
 
 ## Author
 
