@@ -31,8 +31,8 @@ import time
 # configuration parameters
 cloud_instance_id = os.environ['ip4g_cloud_instance_id']
 configuration = ip4g.Configuration()
-configuration.host = os.environ['ip4g_endpoint'] or \
-    "https://service-broker-api.gpcloudtest.com"
+configuration.host = os.environ.get('ip4g_endpoint',
+    "https://service-broker-api.gpcloudtest.com")
 configuration.debug = False
 
 
