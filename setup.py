@@ -13,7 +13,7 @@
 
 from setuptools import setup, find_packages  # noqa: H301
 
-NAME = "swagger-client"
+NAME = "ip4g"
 VERSION = "1.0.0"
 # To install the library, run the following
 #
@@ -28,7 +28,7 @@ REQUIRES = [
     "six>=1.10",
     "urllib3>=1.23"
 ]
-    
+
 
 setup(
     name=NAME,
@@ -41,6 +41,6 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     long_description="""\
-    IBM Power Systems for Google Cloud API  # noqa: E501
+    IBM Power Systems for Google Cloud API
     """
 )
