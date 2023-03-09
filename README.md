@@ -13,8 +13,8 @@ For more information, please visit [https://convergetp.com](https://convergetp.c
 Python 2.7 and 3.4+
 
 ## Community
-For General questions, contact ip4g@convergetp.com
-For bugs or feature requests, open a GitHub Issue in this repository
+- For General questions, contact ip4g@convergetp.com
+- For bugs or feature requests, open a GitHub Issue in this repository
 
 ## Installation & Usage
 ### pip install
