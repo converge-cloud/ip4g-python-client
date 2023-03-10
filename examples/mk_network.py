@@ -107,12 +107,7 @@ if __name__ == '__main__':
     """Create a new network."""
     client = api_client(configuration)
     api = ip4g.PCloudNetworksApi(client)
-    network_name = "newNetwork"
-    cidr = "10.1.1.0/24"
-    dns = "8.8.8.8"
-    gateway = "10.1.1.1"
-    ip_range = [{"startingIPAddress": '10.1.1.4',
-                 "endingIPAddress": '10.1.1.254'}]
+
     body = ip4g.NetworkCreate(name='newNetwork',\
                               cidr='10.1.1.0/24',\
                               dns_servers=['8.8.8.8'],\
