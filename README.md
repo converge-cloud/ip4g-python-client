@@ -22,9 +22,9 @@ Python 2.7 and 3.4+
 If the python package is hosted on Github, you can install directly from Github
 
 ```sh
-pip install git+https://github.com//.git
+pip install git+https://github.com/converge-cloud/ip4g-python-client
 ```
-(you may need to run `pip` with root permission: `sudo pip install git+https://github.com//.git`)
+(you may need to run `pip` with root permission: `sudo pip install git+https://github.com/converge-cloud/ip4g-python-client`)
 
 Then import the package:
 ```python
@@ -52,7 +52,7 @@ consult [examples/client.py](examples/client.py) for example usage.
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://service-broker-api.ggpcloudtest.com*
+All URIs are relative to *https://service-broker-api.gpcloudtest.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
