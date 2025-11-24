@@ -21,8 +21,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudEventsApi()
+api_instance = ip4g.PCloudEventsApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 event_id = 'event_id_example' # str | Event ID
 accept_language = 'accept_language_example' # str | The language requested for the return document (optional)
@@ -39,9 +48,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
- **event_id** | **str**| Event ID |
- **accept_language** | **str**| The language requested for the return document | [optional]
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **event_id** | **str**| Event ID | 
+ **accept_language** | **str**| The language requested for the return document | [optional] 
 
 ### Return type
 
@@ -49,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -71,8 +80,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudEventsApi()
+api_instance = ip4g.PCloudEventsApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 time = 'time_example' # str | (deprecated - use from_time) A time in either ISO 8601 or unix epoch format (optional)
 from_time = 'from_time_example' # str | A from query time in either ISO 8601 or unix epoch format (optional)
@@ -91,11 +109,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
- **time** | **str**| (deprecated - use from_time) A time in either ISO 8601 or unix epoch format | [optional]
- **from_time** | **str**| A from query time in either ISO 8601 or unix epoch format | [optional]
- **to_time** | **str**| A to query time in either ISO 8601 or unix epoch format | [optional]
- **accept_language** | **str**| The language requested for the return document | [optional]
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **time** | **str**| (deprecated - use from_time) A time in either ISO 8601 or unix epoch format | [optional] 
+ **from_time** | **str**| A from query time in either ISO 8601 or unix epoch format | [optional] 
+ **to_time** | **str**| A to query time in either ISO 8601 or unix epoch format | [optional] 
+ **accept_language** | **str**| The language requested for the return document | [optional] 
 
 ### Return type
 
@@ -103,7 +121,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -111,3 +129,4 @@ No authorization required
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
