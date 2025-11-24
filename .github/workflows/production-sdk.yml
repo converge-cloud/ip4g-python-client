@@ -80,6 +80,9 @@ jobs:
           
           find . -type f -not -path './.git/*' -exec sed -i 's/swagger_client/ip4g/g' {} +
           find . -type f -not -path './.git/*' -exec sed -i 's/swagger-client/ip4g/g' {} +
+        
+          rm -rf .github/workflows/
+          git checkout HEAD -- .github/workflows/
 
       - name: Update version in setup.py
         if: steps.check_version.outputs.exists == 'false'
