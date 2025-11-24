@@ -39,7 +39,7 @@ jobs:
 
       - name: Download production swagger spec
         run: |
-          curl -sS -H "Cache-Control: no-cache" -H "Pragma: no-cache" "https://pforg-api.converge.cloud/swagger/api-spec-prod.json?nocache=$(date +%s)" -o /tmp/swagger.json
+          curl -sS https://pforg-api.converge.cloud/swagger/api-spec-prod.json -o /tmp/swagger.json
 
       - name: Extract version from swagger
         id: version
