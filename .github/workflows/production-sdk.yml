@@ -93,11 +93,14 @@ jobs:
           mkdir -p morpho-swagger/output
           cp /tmp/swagger.yaml morpho-swagger/output/swagger.yaml
           
-          # Use the script from internal-repo directly
-          ./internal-repo/internal/bin/generate --inplace
+          # Move internal folder to root so paths resolve correctly
+          mv internal-repo/internal ./internal
+          
+          # Now the script will generate into current directory (internal/bin/../../ = .)
+          ./internal/bin/generate --inplace
           
           # Clean up temporary files after generation
-          rm -rf internal-repo morpho-swagger
+          rm -rf internal-repo internal morpho-swagger
           
           # Restore original workflow files
           git checkout HEAD -- .github/workflows/ 2>/dev/null || true
