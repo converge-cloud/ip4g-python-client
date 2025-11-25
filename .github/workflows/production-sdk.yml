@@ -64,6 +64,9 @@ jobs:
         run: |
           curl -sS https://pforg-api.converge.cloud/swagger/api-spec-prod.json -o /tmp/swagger.yaml
 
+          mkdir -p morpho-swagger/output
+          cp /tmp/swagger.yaml morpho-swagger/output/swagger.yaml
+
       - name: Extract version from swagger
         id: version
         run: |
@@ -89,7 +92,7 @@ jobs:
       - name: Generate SDK using Perl script
         if: steps.check_version.outputs.exists == 'false'
         run: |
-          ./internal-repo/internal/bin/generate --inplace /tmp/swagger.yaml .
+          ./internal-repo/internal/bin/generate --inplace
 
       - name: Create Pull Request to public repo
         if: steps.check_version.outputs.exists == 'false'
