@@ -92,7 +92,15 @@ jobs:
       - name: Generate SDK using Perl script
         if: steps.check_version.outputs.exists == 'false'
         run: |
-          ./internal-repo/internal/bin/generate --inplace
+          # Copy generate script to root directory so relative paths work correctly
+          cp -r internal-repo/internal ./internal
+          ./internal/bin/generate --inplace
+          
+          # Clean up temporary files after generation
+          rm -rf internal-repo internal morpho-swagger
+          
+          # Restore original workflow files
+          git checkout HEAD -- .github/workflows/ 2>/dev/null || true
 
       - name: Create Pull Request to public repo
         if: steps.check_version.outputs.exists == 'false'
@@ -102,6 +110,16 @@ jobs:
           commit-message: "chore: generate production SDK v${{ steps.version.outputs.version }}"
           branch: sdk/production-v${{ steps.version.outputs.version }}
           delete-branch: true
+          add-paths: |
+            ip4g/**
+            docs/**
+            test/**
+            setup.py
+            requirements.txt
+            test-requirements.txt
+            README.md
+            tox.ini
+            .swagger-codegen-ignore
           title: "Production SDK v${{ steps.version.outputs.version }}"
           body: |
             ## Production SDK Release v${{ steps.version.outputs.version }}
