@@ -20,10 +20,29 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Checkout repo
+      - name: Generate GitHub App Token
+        uses: actions/create-github-app-token@v2
+        id: app-token
+        with:
+          app-id: ${{ vars.GH_APP_ID_FETCH }}
+          private-key: ${{ secrets.GH_APP_PRIVATE_KEY_FETCH }}
+          owner: ${{ github.repository_owner }}
+      - name: Checkout public repo
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      - name: Checkout internal repo for scripts
+        uses: actions/checkout@v4
+        with:
+          repository: converge-cloud/internal-ip4g-python-client
+          path: internal-repo
+          token: ${{ steps.app-token.outputs.token }}
+
+      - name: Setup Perl
+        uses: shogo82148/actions-setup-perl@v1
+        with:
+          perl-version: '5.38'
 
       - name: Setup Java
         uses: actions/setup-java@v4
@@ -33,13 +52,16 @@ jobs:
 
       - name: Install swagger-codegen v2
         run: |
-          wget https://repo1.maven.org/maven2/io/swagger/swagger-codegen-cli/2.4.33/swagger-codegen-cli-2.4.33.jar -O swagger-codegen-cli.jar
-          echo 'java -jar $(pwd)/swagger-codegen-cli.jar "$@"' > /usr/local/bin/swagger-codegen
-          chmod +x /usr/local/bin/swagger-codegen
+          wget https://repo1.maven.org/maven2/io/swagger/swagger-codegen-cli/2.4.33/swagger-codegen-cli-2.4.33.jar -O /tmp/swagger-codegen-cli.jar
+          sudo mkdir -p /opt/homebrew/Cellar/swagger-codegen@2/2.4.33/bin
+          sudo ln -sf /tmp/swagger-codegen-cli.jar /opt/homebrew/Cellar/swagger-codegen@2/2.4.33/bin/swagger-codegen-cli.jar
+          echo '#!/bin/bash' | sudo tee /opt/homebrew/Cellar/swagger-codegen@2/2.4.33/bin/swagger-codegen
+          echo 'java -jar /tmp/swagger-codegen-cli.jar "$@"' | sudo tee -a /opt/homebrew/Cellar/swagger-codegen@2/2.4.33/bin/swagger-codegen
+          sudo chmod +x /opt/homebrew/Cellar/swagger-codegen@2/2.4.33/bin/swagger-codegen
 
       - name: Download production swagger spec
         run: |
-          curl -sS -H "Cache-Control: no-cache" -H "Pragma: no-cache" "https://pforg-api.converge.cloud/swagger/api-spec-prod.json?nocache=$(date +%s)" -o /tmp/swagger.json
+          curl -sS https://pforg-api.converge.cloud/swagger/api-spec-prod.json -o /tmp/swagger.yaml
 
       - name: Extract version from swagger
         id: version
@@ -47,7 +69,7 @@ jobs:
           if [ -n "${{ inputs.force_version }}" ]; then
             VERSION="${{ inputs.force_version }}"
           else
-            VERSION=$(cat /tmp/swagger.json | python3 -c "import json, sys; print(json.load(sys.stdin)['info']['version'])")
+            VERSION=$(cat /tmp/swagger.yaml | python3 -c "import json, sys; print(json.load(sys.stdin)['info']['version'])")
           fi
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "Production SDK version: $VERSION"
@@ -63,36 +85,10 @@ jobs:
             echo "exists=false" >> $GITHUB_OUTPUT
           fi
 
-      - name: Generate SDK
+      - name: Generate SDK using Perl script
         if: steps.check_version.outputs.exists == 'false'
         run: |
-          rm -rf ip4g docs test setup.py requirements.txt test-requirements.txt .swagger-codegen
-          swagger-codegen generate \
-            -l python \
-            -o . \
-            -i /tmp/swagger.json \
-            --git-repo-id ip4g-python-client \
-            --git-user-id converge-cloud
-          
-          if [ -d "swagger_client" ]; then
-            mv swagger_client ip4g
-          fi
-          
-          find . -type f -not -path './.git/*' -exec sed -i 's/swagger_client/ip4g/g' {} +
-          find . -type f -not -path './.git/*' -exec sed -i 's/swagger-client/ip4g/g' {} +
-        
-          rm -rf .github/workflows/
-          git checkout HEAD -- .github/workflows/
-
-      - name: Update version in setup.py
-        if: steps.check_version.outputs.exists == 'false'
-        run: |
-          sed -i "s/VERSION = \".*\"/VERSION = \"${{ steps.version.outputs.version }}\"/" setup.py
-
-      - name: Update version in setup.py
-        if: steps.check_version.outputs.exists == 'false'
-        run: |
-          sed -i "s/VERSION = \".*\"/VERSION = \"${{ steps.version.outputs.version }}\"/" setup.py
+          ./internal-repo/internal/bin/generate /tmp/swagger.yaml .
 
       - name: Create Pull Request to public repo
         if: steps.check_version.outputs.exists == 'false'
@@ -102,17 +98,6 @@ jobs:
           commit-message: "chore: generate production SDK v${{ steps.version.outputs.version }}"
           branch: sdk/production-v${{ steps.version.outputs.version }}
           delete-branch: true
-          add-paths: |
-            ip4g/**
-            docs/**
-            test/**
-            setup.py
-            requirements.txt
-            test-requirements.txt
-            README.md
-            tox.ini
-            .swagger-codegen-ignore
-            .swagger-codegen/**
           title: "Production SDK v${{ steps.version.outputs.version }}"
           body: |
             ## Production SDK Release v${{ steps.version.outputs.version }}
@@ -124,6 +109,11 @@ jobs:
             ### Changes
             - Generated SDK for version ${{ steps.version.outputs.version }}
             - Updated setup.py version
+            
+            ### Next Steps
+            After merging this PR:
+            1. Create a GitHub release with tag v${{ steps.version.outputs.version }}
+            2. Publish to PyPI (if applicable)
           labels: |
             sdk-release
             production
