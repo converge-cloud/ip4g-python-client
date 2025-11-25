@@ -93,8 +93,17 @@ jobs:
           mkdir -p morpho-swagger/output
           cp /tmp/swagger.yaml morpho-swagger/output/swagger.yaml
           
+          # Verify the file exists
+          ls -la morpho-swagger/output/swagger.yaml
+          pwd
+          
           # Copy generate script to root directory so relative paths work correctly
           cp -r internal-repo/internal ./internal
+          
+          # Check what the script is looking for
+          echo "Script will look for: $(pwd)/morpho-swagger/output/swagger.yaml"
+          ls -la internal/bin/
+          
           ./internal/bin/generate --inplace
           
           # Clean up temporary files after generation
