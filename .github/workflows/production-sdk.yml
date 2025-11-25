@@ -89,7 +89,7 @@ jobs:
       - name: Generate SDK using Perl script
         if: steps.check_version.outputs.exists == 'false'
         run: |
-          ./internal-repo/internal/bin/generate /tmp/swagger.yaml .
+          ./internal-repo/internal/bin/generate --inplace /tmp/swagger.yaml .
 
       - name: Create Pull Request to public repo
         if: steps.check_version.outputs.exists == 'false'
