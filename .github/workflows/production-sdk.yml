@@ -89,22 +89,15 @@ jobs:
       - name: Generate SDK using Perl script
         if: steps.check_version.outputs.exists == 'false'
         run: |
-          # Get absolute paths
-          WORKSPACE_DIR=$(pwd)
-          PARENT_DIR=$(dirname "$WORKSPACE_DIR")
-          
-          # Create morpho-swagger structure in parent directory where script expects it
-          mkdir -p "$PARENT_DIR/morpho-swagger/output"
-          cp /tmp/swagger.yaml "$PARENT_DIR/morpho-swagger/output/swagger.yaml"
-          
-          # Verify the file exists
-          ls -la "$PARENT_DIR/morpho-swagger/output/swagger.yaml"
+          # Create morpho-swagger structure in current directory where script expects it
+          mkdir -p morpho-swagger/output
+          cp /tmp/swagger.yaml morpho-swagger/output/swagger.yaml
           
           # Use the script from internal-repo directly
           ./internal-repo/internal/bin/generate --inplace
           
           # Clean up temporary files after generation
-          rm -rf internal-repo "$PARENT_DIR/morpho-swagger"
+          rm -rf internal-repo morpho-swagger
           
           # Restore original workflow files
           git checkout HEAD -- .github/workflows/ 2>/dev/null || true
