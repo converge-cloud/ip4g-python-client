@@ -27,6 +27,7 @@ jobs:
           app-id: ${{ vars.GH_APP_ID_FETCH }}
           private-key: ${{ secrets.GH_APP_PRIVATE_KEY_FETCH }}
           owner: ${{ github.repository_owner }}
+          repositories: internal-ip4g-python-client
       - name: Checkout public repo
         uses: actions/checkout@v4
         with:
