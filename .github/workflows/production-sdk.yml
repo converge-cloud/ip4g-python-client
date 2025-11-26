@@ -135,11 +135,6 @@ jobs:
             ### Changes
             - Generated SDK for version ${{ steps.version.outputs.version }}
             - Updated setup.py version
-            
-            ### Next Steps
-            After merging this PR:
-            1. Create a GitHub release with tag v${{ steps.version.outputs.version }}
-            2. Publish to PyPI (if applicable)
           labels: |
             sdk-release
             production
