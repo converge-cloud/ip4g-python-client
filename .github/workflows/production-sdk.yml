@@ -128,7 +128,7 @@ jobs:
           body: |
             ## Production SDK Release v${{ steps.version.outputs.version }}
             
-            Generated from production swagger specification.
+            Generated from production swagger specification
             
             **Swagger source:** https://pforg-api.converge.cloud/swagger/api-spec-prod.json
             
