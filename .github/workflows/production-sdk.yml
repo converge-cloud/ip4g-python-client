@@ -24,8 +24,8 @@ jobs:
         uses: actions/create-github-app-token@v2
         id: app-token
         with:
-          app-id: ${{ vars.GH_APP_ID_FETCH }}
-          private-key: ${{ secrets.GH_APP_PRIVATE_KEY_FETCH }}
+          app-id: ${{ vars.GH_APP_ID_JARVIS }}
+          private-key: ${{ secrets.GH_APP_PRIVATE_KEY_JARVIS }}
           owner: ${{ github.repository_owner }}
           repositories: internal-ip4g-python-client
       - name: Checkout public repo
