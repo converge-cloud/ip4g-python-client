@@ -24,8 +24,8 @@ jobs:
         uses: actions/create-github-app-token@v2
         id: app-token
         with:
-          app-id: ${{ vars.GH_APP_ID_JARVIS }}
-          private-key: ${{ secrets.GH_APP_PRIVATE_KEY_JARVIS }}
+          app-id: ${{ vars.GH_APP_ID_FETCH }}
+          private-key: ${{ secrets.GH_APP_PRIVATE_KEY_FETCH }}
           owner: ${{ github.repository_owner }}
           repositories: internal-ip4g-python-client
       - name: Checkout public repo
@@ -106,17 +106,26 @@ jobs:
           # Restore original workflow files
           git checkout HEAD -- .github/workflows/ 2>/dev/null || true
 
+      - name: Generate GitHub App Token
+        uses: actions/create-github-app-token@v2
+        id: pr-token
+        with:
+          app-id: ${{ vars.GH_APP_ID_JARVIS }}
+          private-key: ${{ secrets.GH_APP_PRIVATE_KEY_JARVIS }}
+          owner: ${{ github.repository_owner }}
+          repositories: ip4g-python-client
+
       - name: Create Pull Request to public repo
         if: steps.check_version.outputs.exists == 'false'
         uses: peter-evans/create-pull-request@v7
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ steps.pr-token.outputs.token }}
           commit-message: "chore: generate production SDK v${{ steps.version.outputs.version }}"
           branch: sdk/production-v${{ steps.version.outputs.version }}
           delete-branch: true
           add-paths: |
             ip4g/**
-            docs/**
+            docs/** 
             test/**
             setup.py
             requirements.txt
