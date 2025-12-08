@@ -4,147 +4,16 @@ All URIs are relative to *https://service-broker-api.gpcloudtest.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**service_broker_auth_callback**](AuthenticationApi.md#service_broker_auth_callback) | **GET** /auth/v1/callback | Returns an accessToken (and set cookie)
-[**service_broker_auth_device_code_post**](AuthenticationApi.md#service_broker_auth_device_code_post) | **POST** /auth/v1/device/code | Request a authorization device code
-[**service_broker_auth_device_token_post**](AuthenticationApi.md#service_broker_auth_device_token_post) | **POST** /auth/v1/device/token | Poll for authorization device token
 [**service_broker_auth_info_token**](AuthenticationApi.md#service_broker_auth_info_token) | **GET** /auth/v1/info/token | Information about current access token
 [**service_broker_auth_info_user**](AuthenticationApi.md#service_broker_auth_info_user) | **GET** /auth/v1/info/user | Information about current user
 [**service_broker_auth_login**](AuthenticationApi.md#service_broker_auth_login) | **GET** /auth/v1/login | Login
 [**service_broker_auth_logout**](AuthenticationApi.md#service_broker_auth_logout) | **GET** /auth/v1/logout | Logout
-[**service_broker_auth_registration**](AuthenticationApi.md#service_broker_auth_registration) | **GET** /auth/v1/registration | Registration of a new Tenant and Login
-[**service_broker_auth_registration_callback**](AuthenticationApi.md#service_broker_auth_registration_callback) | **GET** /auth/v1/callback-registration | Associates the user with a tenant and returns an accessToken
-[**service_broker_auth_token_post**](AuthenticationApi.md#service_broker_auth_token_post) | **POST** /auth/v1/token | Request a new token from a refresh token
+[**service_broker_auth_sa_delete**](AuthenticationApi.md#service_broker_auth_sa_delete) | **DELETE** /auth/sa/{client_id} | Delete service account
+[**service_broker_auth_sa_get**](AuthenticationApi.md#service_broker_auth_sa_get) | **GET** /auth/sa/{client_id} | Describe service account
+[**service_broker_auth_sa_getall**](AuthenticationApi.md#service_broker_auth_sa_getall) | **GET** /auth/sa | List service accounts
+[**service_broker_auth_sa_post**](AuthenticationApi.md#service_broker_auth_sa_post) | **POST** /auth/sa/{client_id} | Add service account
+[**service_broker_auth_sa_put**](AuthenticationApi.md#service_broker_auth_sa_put) | **PUT** /auth/sa/{client_id} | Edit service account
 
-
-# **service_broker_auth_callback**
-> AccessToken service_broker_auth_callback()
-
-Returns an accessToken (and set cookie)
-
-### Example
-```python
-from __future__ import print_function
-import time
-import ip4g
-from ip4g.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = ip4g.AuthenticationApi()
-
-try:
-    # Returns an accessToken (and set cookie)
-    api_response = api_instance.service_broker_auth_callback()
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AuthenticationApi->service_broker_auth_callback: %s\n" % e)
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**AccessToken**](AccessToken.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **service_broker_auth_device_code_post**
-> DeviceCode service_broker_auth_device_code_post()
-
-Request a authorization device code
-
-### Example
-```python
-from __future__ import print_function
-import time
-import ip4g
-from ip4g.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = ip4g.AuthenticationApi()
-
-try:
-    # Request a authorization device code
-    api_response = api_instance.service_broker_auth_device_code_post()
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AuthenticationApi->service_broker_auth_device_code_post: %s\n" % e)
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**DeviceCode**](DeviceCode.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **service_broker_auth_device_token_post**
-> Token service_broker_auth_device_token_post(body)
-
-Poll for authorization device token
-
-### Example
-```python
-from __future__ import print_function
-import time
-import ip4g
-from ip4g.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = ip4g.AuthenticationApi()
-body = ip4g.Body() # Body | Parameters for polling authorization device code
-
-try:
-    # Poll for authorization device token
-    api_response = api_instance.service_broker_auth_device_token_post(body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AuthenticationApi->service_broker_auth_device_token_post: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**Body**](Body.md)| Parameters for polling authorization device code |
-
-### Return type
-
-[**Token**](Token.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **service_broker_auth_info_token**
 > TokenExtra service_broker_auth_info_token()
@@ -159,8 +28,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.AuthenticationApi()
+api_instance = ip4g.AuthenticationApi(ip4g.ApiClient(configuration))
 
 try:
     # Information about current access token
@@ -179,7 +57,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -201,8 +79,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.AuthenticationApi()
+api_instance = ip4g.AuthenticationApi(ip4g.ApiClient(configuration))
 
 try:
     # Information about current user
@@ -221,7 +108,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -261,8 +148,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **user_id** | **str**| The user id of the user | [optional]
- **redirect_url** | **str**| The URL to redirect to after login/registration | [optional]
+ **user_id** | **str**| The user id of the user | [optional] 
+ **redirect_url** | **str**| The URL to redirect to after login/registration | [optional] 
  **access_type** | **str**| Determines if a refresh token is returned | [optional] [default to online]
 
 ### Return type
@@ -293,8 +180,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.AuthenticationApi()
+api_instance = ip4g.AuthenticationApi(ip4g.ApiClient(configuration))
 
 try:
     # Logout
@@ -313,7 +209,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -322,10 +218,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **service_broker_auth_registration**
-> AccessToken service_broker_auth_registration(tenant_id, entitlement_id, plan, icn, regions, redirect_url=redirect_url)
+# **service_broker_auth_sa_delete**
+> Object service_broker_auth_sa_delete(client_id)
 
-Registration of a new Tenant and Login
+Delete service account
 
 ### Example
 ```python
@@ -335,41 +231,40 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.AuthenticationApi()
-tenant_id = 'tenant_id_example' # str | Tenant ID of a pcloud tenant
-entitlement_id = 'entitlement_id_example' # str | Entitlement ID of for this tenant
-plan = 'plan_example' # str | Plan for this tenant and entitlement
-icn = 'icn_example' # str | IBM Customer Number (ICN) for this tenant
-regions = ['regions_example'] # list[str] | An array of regions matching the number of cloud-instances in the plan
-redirect_url = 'redirect_url_example' # str | The URL to redirect to after login/registration (optional)
+api_instance = ip4g.AuthenticationApi(ip4g.ApiClient(configuration))
+client_id = 'client_id_example' # str | SA client ID
 
 try:
-    # Registration of a new Tenant and Login
-    api_response = api_instance.service_broker_auth_registration(tenant_id, entitlement_id, plan, icn, regions, redirect_url=redirect_url)
+    # Delete service account
+    api_response = api_instance.service_broker_auth_sa_delete(client_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling AuthenticationApi->service_broker_auth_registration: %s\n" % e)
+    print("Exception when calling AuthenticationApi->service_broker_auth_sa_delete: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tenant_id** | **str**| Tenant ID of a pcloud tenant |
- **entitlement_id** | **str**| Entitlement ID of for this tenant |
- **plan** | **str**| Plan for this tenant and entitlement |
- **icn** | **str**| IBM Customer Number (ICN) for this tenant |
- **regions** | [**list[str]**](str.md)| An array of regions matching the number of cloud-instances in the plan |
- **redirect_url** | **str**| The URL to redirect to after login/registration | [optional]
+ **client_id** | **str**| SA client ID | 
 
 ### Return type
 
-[**AccessToken**](AccessToken.md)
+[**Object**](Object.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -378,10 +273,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **service_broker_auth_registration_callback**
-> AccessToken service_broker_auth_registration_callback()
+# **service_broker_auth_sa_get**
+> ServiceAccount service_broker_auth_sa_get(client_id)
 
-Associates the user with a tenant and returns an accessToken
+Describe service account
 
 ### Example
 ```python
@@ -391,15 +286,79 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.AuthenticationApi()
+api_instance = ip4g.AuthenticationApi(ip4g.ApiClient(configuration))
+client_id = 'client_id_example' # str | SA client ID
 
 try:
-    # Associates the user with a tenant and returns an accessToken
-    api_response = api_instance.service_broker_auth_registration_callback()
+    # Describe service account
+    api_response = api_instance.service_broker_auth_sa_get(client_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling AuthenticationApi->service_broker_auth_registration_callback: %s\n" % e)
+    print("Exception when calling AuthenticationApi->service_broker_auth_sa_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **client_id** | **str**| SA client ID | 
+
+### Return type
+
+[**ServiceAccount**](ServiceAccount.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **service_broker_auth_sa_getall**
+> ServiceAccounts service_broker_auth_sa_getall()
+
+List service accounts
+
+### Example
+```python
+from __future__ import print_function
+import time
+import ip4g
+from ip4g.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = ip4g.AuthenticationApi(ip4g.ApiClient(configuration))
+
+try:
+    # List service accounts
+    api_response = api_instance.service_broker_auth_sa_getall()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AuthenticationApi->service_broker_auth_sa_getall: %s\n" % e)
 ```
 
 ### Parameters
@@ -407,23 +366,23 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**AccessToken**](AccessToken.md)
+[**ServiceAccounts**](ServiceAccounts.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **service_broker_auth_token_post**
-> Token service_broker_auth_token_post(body)
+# **service_broker_auth_sa_post**
+> ServiceAccount service_broker_auth_sa_post(client_id, body)
 
-Request a new token from a refresh token
+Add service account
 
 ### Example
 ```python
@@ -433,31 +392,42 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.AuthenticationApi()
-body = ip4g.TokenRequest() # TokenRequest | Parameters for requesting a new Token from a Refresh Token
+api_instance = ip4g.AuthenticationApi(ip4g.ApiClient(configuration))
+client_id = 'client_id_example' # str | SA client ID
+body = ip4g.ServiceAccountRequest() # ServiceAccountRequest | Parameters for adding service account
 
 try:
-    # Request a new token from a refresh token
-    api_response = api_instance.service_broker_auth_token_post(body)
+    # Add service account
+    api_response = api_instance.service_broker_auth_sa_post(client_id, body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling AuthenticationApi->service_broker_auth_token_post: %s\n" % e)
+    print("Exception when calling AuthenticationApi->service_broker_auth_sa_post: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TokenRequest**](TokenRequest.md)| Parameters for requesting a new Token from a Refresh Token |
+ **client_id** | **str**| SA client ID | 
+ **body** | [**ServiceAccountRequest**](ServiceAccountRequest.md)| Parameters for adding service account | 
 
 ### Return type
 
-[**Token**](Token.md)
+[**ServiceAccount**](ServiceAccount.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -465,3 +435,61 @@ No authorization required
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **service_broker_auth_sa_put**
+> ServiceAccount service_broker_auth_sa_put(client_id, body)
+
+Edit service account
+
+### Example
+```python
+from __future__ import print_function
+import time
+import ip4g
+from ip4g.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = ip4g.AuthenticationApi(ip4g.ApiClient(configuration))
+client_id = 'client_id_example' # str | SA client ID
+body = ip4g.ServiceAccountRequest() # ServiceAccountRequest | Parameters for updating service account
+
+try:
+    # Edit service account
+    api_response = api_instance.service_broker_auth_sa_put(client_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AuthenticationApi->service_broker_auth_sa_put: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **client_id** | **str**| SA client ID | 
+ **body** | [**ServiceAccountRequest**](ServiceAccountRequest.md)| Parameters for updating service account | 
+
+### Return type
+
+[**ServiceAccount**](ServiceAccount.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
