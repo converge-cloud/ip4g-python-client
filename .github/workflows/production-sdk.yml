@@ -1,9 +1,6 @@
 name: Production SDK Release
 
 on:
-  push:
-    branches:
-      - feat/automate_generation
   workflow_dispatch:
     inputs:
       force_version:
