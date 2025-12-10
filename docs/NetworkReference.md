@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**dhcp_managed** | **bool** | DHCP Managed Network | [optional] 
 **href** | **str** | Link to Network resource | 
 **jumbo** | **bool** | MTU Jumbo Network enabled | 
 **name** | **str** | Network Name | 
