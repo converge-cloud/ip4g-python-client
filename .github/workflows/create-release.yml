@@ -1,0 +1,61 @@
+name: Create Release on Merge
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  create-release:
+    if: github.event.pull_request.merged == true && contains(github.event.pull_request.labels.*.name, 'sdk-release')
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Extract version from setup.py
+        id: version
+        run: |
+          VERSION=$(grep "^VERSION = " setup.py | cut -d'"' -f2)
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "Extracted version: $VERSION"
+
+      - name: Check if tag exists
+        id: check_tag
+        run: |
+          if git rev-parse "v${{ steps.version.outputs.version }}" >/dev/null 2>&1; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+            echo "::warning::Tag v${{ steps.version.outputs.version }} already exists. Skipping release creation."
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create Release
+        if: steps.check_tag.outputs.exists == 'false'
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v${{ steps.version.outputs.version }}
+          name: Release v${{ steps.version.outputs.version }}
+          body: |
+            ## Production SDK Release v${{ steps.version.outputs.version }}
+            
+            This release was automatically created after merging PR #${{ github.event.pull_request.number }}.
+            
+            **Swagger source:** https://pforg-api.converge.cloud/swagger/api-spec-prod.json
+            
+            
+            ### Changes
+            See PR #${{ github.event.pull_request.number }} for details.
+          draft: false
+          prerelease: false
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
