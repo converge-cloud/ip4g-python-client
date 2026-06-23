@@ -24,8 +24,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudInstanceSSHKeysApi()
+api_instance = ip4g.PCloudInstanceSSHKeysApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 sshkey_name = 'sshkey_name_example' # str | SSH key name for a pcloud tenant
 
@@ -41,8 +50,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
- **sshkey_name** | **str**| SSH key name for a pcloud tenant |
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **sshkey_name** | **str**| SSH key name for a pcloud tenant | 
 
 ### Return type
 
@@ -50,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -72,8 +81,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudInstanceSSHKeysApi()
+api_instance = ip4g.PCloudInstanceSSHKeysApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 sshkey_name = 'sshkey_name_example' # str | SSH key name for a pcloud tenant
 
@@ -89,8 +107,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
- **sshkey_name** | **str**| SSH key name for a pcloud tenant |
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **sshkey_name** | **str**| SSH key name for a pcloud tenant | 
 
 ### Return type
 
@@ -98,7 +116,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -120,8 +138,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudInstanceSSHKeysApi()
+api_instance = ip4g.PCloudInstanceSSHKeysApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 
 try:
@@ -136,7 +163,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
 
 ### Return type
 
@@ -144,7 +171,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -166,8 +193,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudInstanceSSHKeysApi()
+api_instance = ip4g.PCloudInstanceSSHKeysApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 body = ip4g.SSHKey() # SSHKey | Parameters for the creation of a new SSH key in Cloud Instance
 
@@ -183,8 +219,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
- **body** | [**SSHKey**](SSHKey.md)| Parameters for the creation of a new SSH key in Cloud Instance |
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **body** | [**SSHKey**](SSHKey.md)| Parameters for the creation of a new SSH key in Cloud Instance | 
 
 ### Return type
 
@@ -192,7 +228,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -214,8 +250,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudInstanceSSHKeysApi()
+api_instance = ip4g.PCloudInstanceSSHKeysApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 sshkey_name = 'sshkey_name_example' # str | SSH key name for a pcloud tenant
 body = ip4g.SSHKey() # SSHKey | Parameters for updating a CloudInstance's SSH Key by name
@@ -232,9 +277,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
- **sshkey_name** | **str**| SSH key name for a pcloud tenant |
- **body** | [**SSHKey**](SSHKey.md)| Parameters for updating a CloudInstance&#39;s SSH Key by name |
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **sshkey_name** | **str**| SSH key name for a pcloud tenant | 
+ **body** | [**SSHKey**](SSHKey.md)| Parameters for updating a CloudInstance&#39;s SSH Key by name | 
 
 ### Return type
 
@@ -242,7 +287,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -250,3 +295,4 @@ No authorization required
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
