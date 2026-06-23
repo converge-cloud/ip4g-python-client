@@ -23,8 +23,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudSnapshotsApi()
+api_instance = ip4g.PCloudSnapshotsApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 snapshot_id = 'snapshot_id_example' # str | PVM Instance snapshot id
 
@@ -40,8 +49,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
- **snapshot_id** | **str**| PVM Instance snapshot id |
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **snapshot_id** | **str**| PVM Instance snapshot id | 
 
 ### Return type
 
@@ -49,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -71,8 +80,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudSnapshotsApi()
+api_instance = ip4g.PCloudSnapshotsApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 snapshot_id = 'snapshot_id_example' # str | PVM Instance snapshot id
 
@@ -88,8 +106,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
- **snapshot_id** | **str**| PVM Instance snapshot id |
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **snapshot_id** | **str**| PVM Instance snapshot id | 
 
 ### Return type
 
@@ -97,7 +115,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -119,8 +137,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudSnapshotsApi()
+api_instance = ip4g.PCloudSnapshotsApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 
 try:
@@ -135,7 +162,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
 
 ### Return type
 
@@ -143,7 +170,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -165,8 +192,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudSnapshotsApi()
+api_instance = ip4g.PCloudSnapshotsApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 snapshot_id = 'snapshot_id_example' # str | PVM Instance snapshot id
 body = ip4g.SnapshotUpdate() # SnapshotUpdate | Parameters for the update of a  PVM instance snapshot
@@ -183,9 +219,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
- **snapshot_id** | **str**| PVM Instance snapshot id |
- **body** | [**SnapshotUpdate**](SnapshotUpdate.md)| Parameters for the update of a  PVM instance snapshot |
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **snapshot_id** | **str**| PVM Instance snapshot id | 
+ **body** | [**SnapshotUpdate**](SnapshotUpdate.md)| Parameters for the update of a  PVM instance snapshot | 
 
 ### Return type
 
@@ -193,7 +229,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -201,3 +237,4 @@ No authorization required
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+

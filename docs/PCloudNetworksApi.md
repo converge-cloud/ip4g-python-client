@@ -29,8 +29,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudNetworksApi()
+api_instance = ip4g.PCloudNetworksApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 network_id = 'network_id_example' # str | Network ID
 
@@ -46,8 +55,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
- **network_id** | **str**| Network ID |
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **network_id** | **str**| Network ID | 
 
 ### Return type
 
@@ -55,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -77,8 +86,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudNetworksApi()
+api_instance = ip4g.PCloudNetworksApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 network_id = 'network_id_example' # str | Network ID
 
@@ -94,8 +112,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
- **network_id** | **str**| Network ID |
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **network_id** | **str**| Network ID | 
 
 ### Return type
 
@@ -103,7 +121,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -125,8 +143,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudNetworksApi()
+api_instance = ip4g.PCloudNetworksApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 filter = 'filter_example' # str | A filter expression that filters resources listed in the response (optional)
 
@@ -142,8 +169,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
- **filter** | **str**| A filter expression that filters resources listed in the response | [optional]
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **filter** | **str**| A filter expression that filters resources listed in the response | [optional] 
 
 ### Return type
 
@@ -151,7 +178,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -173,8 +200,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudNetworksApi()
+api_instance = ip4g.PCloudNetworksApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 network_id = 'network_id_example' # str | Network ID
 port_id = 'port_id_example' # str | Port ID
@@ -191,9 +227,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
- **network_id** | **str**| Network ID |
- **port_id** | **str**| Port ID |
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **network_id** | **str**| Network ID | 
+ **port_id** | **str**| Port ID | 
 
 ### Return type
 
@@ -201,7 +237,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -223,8 +259,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudNetworksApi()
+api_instance = ip4g.PCloudNetworksApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 network_id = 'network_id_example' # str | Network ID
 port_id = 'port_id_example' # str | Port ID
@@ -241,9 +286,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
- **network_id** | **str**| Network ID |
- **port_id** | **str**| Port ID |
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **network_id** | **str**| Network ID | 
+ **port_id** | **str**| Port ID | 
 
 ### Return type
 
@@ -251,7 +296,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -273,8 +318,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudNetworksApi()
+api_instance = ip4g.PCloudNetworksApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 network_id = 'network_id_example' # str | Network ID
 
@@ -290,8 +344,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
- **network_id** | **str**| Network ID |
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **network_id** | **str**| Network ID | 
 
 ### Return type
 
@@ -299,7 +353,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -321,8 +375,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudNetworksApi()
+api_instance = ip4g.PCloudNetworksApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 network_id = 'network_id_example' # str | Network ID
 body = ip4g.NetworkPortCreate() # NetworkPortCreate | Create a Network Port (optional)
@@ -339,9 +402,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
- **network_id** | **str**| Network ID |
- **body** | [**NetworkPortCreate**](NetworkPortCreate.md)| Create a Network Port | [optional]
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **network_id** | **str**| Network ID | 
+ **body** | [**NetworkPortCreate**](NetworkPortCreate.md)| Create a Network Port | [optional] 
 
 ### Return type
 
@@ -349,7 +412,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -371,8 +434,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudNetworksApi()
+api_instance = ip4g.PCloudNetworksApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 network_id = 'network_id_example' # str | Network ID
 port_id = 'port_id_example' # str | Port ID
@@ -390,10 +462,10 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
- **network_id** | **str**| Network ID |
- **port_id** | **str**| Port ID |
- **body** | [**NetworkPortUpdate**](NetworkPortUpdate.md)| Parameters for updating a Port |
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **network_id** | **str**| Network ID | 
+ **port_id** | **str**| Port ID | 
+ **body** | [**NetworkPortUpdate**](NetworkPortUpdate.md)| Parameters for updating a Port | 
 
 ### Return type
 
@@ -401,7 +473,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -423,8 +495,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudNetworksApi()
+api_instance = ip4g.PCloudNetworksApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 body = ip4g.NetworkCreate() # NetworkCreate | Parameters for the creation of a new network
 
@@ -440,8 +521,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
- **body** | [**NetworkCreate**](NetworkCreate.md)| Parameters for the creation of a new network |
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **body** | [**NetworkCreate**](NetworkCreate.md)| Parameters for the creation of a new network | 
 
 ### Return type
 
@@ -449,7 +530,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -471,8 +552,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudNetworksApi()
+api_instance = ip4g.PCloudNetworksApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 network_id = 'network_id_example' # str | Network ID
 body = ip4g.NetworkUpdate() # NetworkUpdate | Parameters to update a Network
@@ -489,9 +579,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
- **network_id** | **str**| Network ID |
- **body** | [**NetworkUpdate**](NetworkUpdate.md)| Parameters to update a Network |
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **network_id** | **str**| Network ID | 
+ **body** | [**NetworkUpdate**](NetworkUpdate.md)| Parameters to update a Network | 
 
 ### Return type
 
@@ -499,7 +589,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -507,3 +597,4 @@ No authorization required
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
