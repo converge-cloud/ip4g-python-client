@@ -77,8 +77,8 @@ jobs:
       with:
         job_status: >-
           ${{
-            needs.goreleaser.result == 'failure' && 'failure' ||
-            needs.goreleaser.result == 'cancelled' && 'cancelled' ||
+            needs.create-release.result == 'failure' && 'failure' ||
+            needs.create-release.result == 'cancelled' && 'cancelled' ||
             'success'
           }}
         workflow_name: ${{ github.workflow }}
