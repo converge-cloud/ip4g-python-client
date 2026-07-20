@@ -174,3 +174,34 @@ jobs:
                 --comment "Auto-closed: New SDK version **v$NEW_VERSION** released in PR #$NEW_PR. This PR contains an older SDK version."
             fi
           done
+
+
+  ci-telemetry:
+    name: Emit CI Telemetry
+    runs-on: ubuntu-latest
+    needs: [create-public-pr]
+    if: always()
+
+    permissions:
+      contents: read
+
+    steps:
+    - uses: actions/checkout@v7
+
+    - name: Emit telemetry
+      uses: converge-cloud/morpho-pipeline-templates/.github/actions/ci-telemetry@v0.4.10
+      with:
+        job_status: >-
+          ${{
+            needs.goreleaser.result == 'failure' && 'failure' ||
+            needs.goreleaser.result == 'cancelled' && 'cancelled' ||
+            'success'
+          }}
+        workflow_name: ${{ github.workflow }}
+        service_name: ${{ github.event.repository.name }}
+        grafana_otlp_endpoint: ${{ secrets.GRAFANA_OTLP_ENDPOINT }}
+        grafana_otlp_auth: ${{ secrets.GRAFANA_OTLP_AUTH }}
+        grafana_loki_url: ${{ secrets.GRAFANA_LOKI_URL }}
+        grafana_loki_auth: ${{ secrets.GRAFANA_LOKI_AUTH }}
+
+          
