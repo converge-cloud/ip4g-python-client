@@ -4,7 +4,8 @@ All URIs are relative to *https://service-broker-api.gpcloudtest.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**pcloud_pvminstances_action_post**](PCloudPVMInstancesApi.md#pcloud_pvminstances_action_post) | **POST** /pcloud/v1/cloud-instances/{cloud_instance_id}/pvm-instances/{pvm_instance_id}/action | Perform an action (start stop reboot immediate-shutdown reset) on a PVMInstance
+[**pcloud_pvminstance_consoletoken_get**](PCloudPVMInstancesApi.md#pcloud_pvminstance_consoletoken_get) | **GET** /pcloud/v1/cloud-instances/{cloud_instance_id}/pvm-instances/{pvm_instance_id}/console/{console_token} | Validate noVNC Console Token
+[**pcloud_pvminstances_action_post**](PCloudPVMInstancesApi.md#pcloud_pvminstances_action_post) | **POST** /pcloud/v1/cloud-instances/{cloud_instance_id}/pvm-instances/{pvm_instance_id}/action | Perform an action (start stop reboot immediate-shutdown reset dump-restart) on a PVMInstance
 [**pcloud_pvminstances_capture_post**](PCloudPVMInstancesApi.md#pcloud_pvminstances_capture_post) | **POST** /pcloud/v1/cloud-instances/{cloud_instance_id}/pvm-instances/{pvm_instance_id}/capture | Capture a PVMInstance and create a deployable image
 [**pcloud_pvminstances_clone_post**](PCloudPVMInstancesApi.md#pcloud_pvminstances_clone_post) | **POST** /pcloud/v1/cloud-instances/{cloud_instance_id}/pvm-instances/{pvm_instance_id}/clone | Clone a PVMInstance
 [**pcloud_pvminstances_console_get**](PCloudPVMInstancesApi.md#pcloud_pvminstances_console_get) | **GET** /pcloud/v1/cloud-instances/{cloud_instance_id}/pvm-instances/{pvm_instance_id}/console | List all console languages
@@ -27,10 +28,10 @@ Method | HTTP request | Description
 [**pcloud_v2_pvminstances_capture_post**](PCloudPVMInstancesApi.md#pcloud_v2_pvminstances_capture_post) | **POST** /pcloud/v2/cloud-instances/{cloud_instance_id}/pvm-instances/{pvm_instance_id}/capture | Add a capture pvm-instance to the jobs queue
 
 
-# **pcloud_pvminstances_action_post**
-> Object pcloud_pvminstances_action_post(cloud_instance_id, pvm_instance_id, body)
+# **pcloud_pvminstance_consoletoken_get**
+> ConsoleToken pcloud_pvminstance_consoletoken_get(cloud_instance_id, pvm_instance_id, console_token)
 
-Perform an action (start stop reboot immediate-shutdown reset) on a PVMInstance
+Validate noVNC Console Token
 
 ### Example
 ```python
@@ -40,14 +41,82 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudPVMInstancesApi()
+api_instance = ip4g.PCloudPVMInstancesApi(ip4g.ApiClient(configuration))
+cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
+pvm_instance_id = 'pvm_instance_id_example' # str | PCloud PVM Instance ID
+console_token = 'console_token_example' # str | noVNC Console Authentication Token
+
+try:
+    # Validate noVNC Console Token
+    api_response = api_instance.pcloud_pvminstance_consoletoken_get(cloud_instance_id, pvm_instance_id, console_token)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PCloudPVMInstancesApi->pcloud_pvminstance_consoletoken_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **pvm_instance_id** | **str**| PCloud PVM Instance ID | 
+ **console_token** | **str**| noVNC Console Authentication Token | 
+
+### Return type
+
+[**ConsoleToken**](ConsoleToken.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **pcloud_pvminstances_action_post**
+> Object pcloud_pvminstances_action_post(cloud_instance_id, pvm_instance_id, body)
+
+Perform an action (start stop reboot immediate-shutdown reset dump-restart) on a PVMInstance
+
+### Example
+```python
+from __future__ import print_function
+import time
+import ip4g
+from ip4g.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = ip4g.PCloudPVMInstancesApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 pvm_instance_id = 'pvm_instance_id_example' # str | PCloud PVM Instance ID
 body = ip4g.PVMInstanceAction() # PVMInstanceAction | Parameters for the desired action
 
 try:
-    # Perform an action (start stop reboot immediate-shutdown reset) on a PVMInstance
+    # Perform an action (start stop reboot immediate-shutdown reset dump-restart) on a PVMInstance
     api_response = api_instance.pcloud_pvminstances_action_post(cloud_instance_id, pvm_instance_id, body)
     pprint(api_response)
 except ApiException as e:
@@ -58,9 +127,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
- **pvm_instance_id** | **str**| PCloud PVM Instance ID |
- **body** | [**PVMInstanceAction**](PVMInstanceAction.md)| Parameters for the desired action |
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **pvm_instance_id** | **str**| PCloud PVM Instance ID | 
+ **body** | [**PVMInstanceAction**](PVMInstanceAction.md)| Parameters for the desired action | 
 
 ### Return type
 
@@ -68,7 +137,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -90,8 +159,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudPVMInstancesApi()
+api_instance = ip4g.PCloudPVMInstancesApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 pvm_instance_id = 'pvm_instance_id_example' # str | PCloud PVM Instance ID
 body = ip4g.PVMInstanceCapture() # PVMInstanceCapture | Parameters for the capture PVMInstance
@@ -108,9 +186,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
- **pvm_instance_id** | **str**| PCloud PVM Instance ID |
- **body** | [**PVMInstanceCapture**](PVMInstanceCapture.md)| Parameters for the capture PVMInstance |
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **pvm_instance_id** | **str**| PCloud PVM Instance ID | 
+ **body** | [**PVMInstanceCapture**](PVMInstanceCapture.md)| Parameters for the capture PVMInstance | 
 
 ### Return type
 
@@ -118,7 +196,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -140,8 +218,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudPVMInstancesApi()
+api_instance = ip4g.PCloudPVMInstancesApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 pvm_instance_id = 'pvm_instance_id_example' # str | PCloud PVM Instance ID
 body = ip4g.PVMInstanceClone() # PVMInstanceClone | Clone PVM Instance parameters
@@ -158,9 +245,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
- **pvm_instance_id** | **str**| PCloud PVM Instance ID |
- **body** | [**PVMInstanceClone**](PVMInstanceClone.md)| Clone PVM Instance parameters |
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **pvm_instance_id** | **str**| PCloud PVM Instance ID | 
+ **body** | [**PVMInstanceClone**](PVMInstanceClone.md)| Clone PVM Instance parameters | 
 
 ### Return type
 
@@ -168,7 +255,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -190,8 +277,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudPVMInstancesApi()
+api_instance = ip4g.PCloudPVMInstancesApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 pvm_instance_id = 'pvm_instance_id_example' # str | PCloud PVM Instance ID
 
@@ -207,8 +303,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
- **pvm_instance_id** | **str**| PCloud PVM Instance ID |
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **pvm_instance_id** | **str**| PCloud PVM Instance ID | 
 
 ### Return type
 
@@ -216,7 +312,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -238,8 +334,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudPVMInstancesApi()
+api_instance = ip4g.PCloudPVMInstancesApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 pvm_instance_id = 'pvm_instance_id_example' # str | PCloud PVM Instance ID
 
@@ -255,8 +360,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
- **pvm_instance_id** | **str**| PCloud PVM Instance ID |
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **pvm_instance_id** | **str**| PCloud PVM Instance ID | 
 
 ### Return type
 
@@ -264,7 +369,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -286,8 +391,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudPVMInstancesApi()
+api_instance = ip4g.PCloudPVMInstancesApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 pvm_instance_id = 'pvm_instance_id_example' # str | PCloud PVM Instance ID
 body = ip4g.ConsoleLanguage() # ConsoleLanguage | Parameters to update a PVMInstance console required codepage
@@ -304,9 +418,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
- **pvm_instance_id** | **str**| PCloud PVM Instance ID |
- **body** | [**ConsoleLanguage**](ConsoleLanguage.md)| Parameters to update a PVMInstance console required codepage |
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **pvm_instance_id** | **str**| PCloud PVM Instance ID | 
+ **body** | [**ConsoleLanguage**](ConsoleLanguage.md)| Parameters to update a PVMInstance console required codepage | 
 
 ### Return type
 
@@ -314,7 +428,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -336,8 +450,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudPVMInstancesApi()
+api_instance = ip4g.PCloudPVMInstancesApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 pvm_instance_id = 'pvm_instance_id_example' # str | PCloud PVM Instance ID
 delete_data_volumes = true # bool | Indicates if all data volumes attached to the PVMInstance should be deleted when deleting the PVMInstance. Shared data volumes will be deleted if there are no other PVMInstances attached. (optional)
@@ -354,9 +477,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
- **pvm_instance_id** | **str**| PCloud PVM Instance ID |
- **delete_data_volumes** | **bool**| Indicates if all data volumes attached to the PVMInstance should be deleted when deleting the PVMInstance. Shared data volumes will be deleted if there are no other PVMInstances attached. | [optional]
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **pvm_instance_id** | **str**| PCloud PVM Instance ID | 
+ **delete_data_volumes** | **bool**| Indicates if all data volumes attached to the PVMInstance should be deleted when deleting the PVMInstance. Shared data volumes will be deleted if there are no other PVMInstances attached. | [optional] 
 
 ### Return type
 
@@ -364,7 +487,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -386,8 +509,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudPVMInstancesApi()
+api_instance = ip4g.PCloudPVMInstancesApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 pvm_instance_id = 'pvm_instance_id_example' # str | PCloud PVM Instance ID
 
@@ -403,8 +535,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
- **pvm_instance_id** | **str**| PCloud PVM Instance ID |
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **pvm_instance_id** | **str**| PCloud PVM Instance ID | 
 
 ### Return type
 
@@ -412,7 +544,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -434,8 +566,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudPVMInstancesApi()
+api_instance = ip4g.PCloudPVMInstancesApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 
 try:
@@ -450,7 +591,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
 
 ### Return type
 
@@ -458,7 +599,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -480,8 +621,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudPVMInstancesApi()
+api_instance = ip4g.PCloudPVMInstancesApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 pvm_instance_id = 'pvm_instance_id_example' # str | PCloud PVM Instance ID
 network_id = 'network_id_example' # str | Network ID
@@ -499,10 +649,10 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
- **pvm_instance_id** | **str**| PCloud PVM Instance ID |
- **network_id** | **str**| Network ID |
- **body** | [**PVMInstanceRemoveNetwork**](PVMInstanceRemoveNetwork.md)| Remove a network from PVM Instance parameters | [optional]
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **pvm_instance_id** | **str**| PCloud PVM Instance ID | 
+ **network_id** | **str**| Network ID | 
+ **body** | [**PVMInstanceRemoveNetwork**](PVMInstanceRemoveNetwork.md)| Remove a network from PVM Instance parameters | [optional] 
 
 ### Return type
 
@@ -510,7 +660,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -532,8 +682,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudPVMInstancesApi()
+api_instance = ip4g.PCloudPVMInstancesApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 pvm_instance_id = 'pvm_instance_id_example' # str | PCloud PVM Instance ID
 network_id = 'network_id_example' # str | Network ID
@@ -550,9 +709,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
- **pvm_instance_id** | **str**| PCloud PVM Instance ID |
- **network_id** | **str**| Network ID |
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **pvm_instance_id** | **str**| PCloud PVM Instance ID | 
+ **network_id** | **str**| Network ID | 
 
 ### Return type
 
@@ -560,7 +719,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -582,8 +741,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudPVMInstancesApi()
+api_instance = ip4g.PCloudPVMInstancesApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 pvm_instance_id = 'pvm_instance_id_example' # str | PCloud PVM Instance ID
 
@@ -599,8 +767,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
- **pvm_instance_id** | **str**| PCloud PVM Instance ID |
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **pvm_instance_id** | **str**| PCloud PVM Instance ID | 
 
 ### Return type
 
@@ -608,7 +776,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -630,8 +798,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudPVMInstancesApi()
+api_instance = ip4g.PCloudPVMInstancesApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 pvm_instance_id = 'pvm_instance_id_example' # str | PCloud PVM Instance ID
 body = ip4g.PVMInstanceAddNetwork() # PVMInstanceAddNetwork | Add network to PVM Instance parameters
@@ -648,9 +825,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
- **pvm_instance_id** | **str**| PCloud PVM Instance ID |
- **body** | [**PVMInstanceAddNetwork**](PVMInstanceAddNetwork.md)| Add network to PVM Instance parameters |
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **pvm_instance_id** | **str**| PCloud PVM Instance ID | 
+ **body** | [**PVMInstanceAddNetwork**](PVMInstanceAddNetwork.md)| Add network to PVM Instance parameters | 
 
 ### Return type
 
@@ -658,7 +835,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -680,8 +857,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudPVMInstancesApi()
+api_instance = ip4g.PCloudPVMInstancesApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 pvm_instance_id = 'pvm_instance_id_example' # str | PCloud PVM Instance ID
 body = ip4g.PVMInstanceOperation() # PVMInstanceOperation | Parameters for the desired operations
@@ -698,9 +884,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
- **pvm_instance_id** | **str**| PCloud PVM Instance ID |
- **body** | [**PVMInstanceOperation**](PVMInstanceOperation.md)| Parameters for the desired operations |
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **pvm_instance_id** | **str**| PCloud PVM Instance ID | 
+ **body** | [**PVMInstanceOperation**](PVMInstanceOperation.md)| Parameters for the desired operations | 
 
 ### Return type
 
@@ -708,7 +894,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -730,8 +916,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudPVMInstancesApi()
+api_instance = ip4g.PCloudPVMInstancesApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 body = ip4g.PVMInstanceCreate() # PVMInstanceCreate | Parameters for the creation of a new Power VM Instance
 skip_host_validation = true # bool | Option to skip host validation on PVMInstance Create API (optional)
@@ -748,9 +943,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
- **body** | [**PVMInstanceCreate**](PVMInstanceCreate.md)| Parameters for the creation of a new Power VM Instance |
- **skip_host_validation** | **bool**| Option to skip host validation on PVMInstance Create API | [optional]
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **body** | [**PVMInstanceCreate**](PVMInstanceCreate.md)| Parameters for the creation of a new Power VM Instance | 
+ **skip_host_validation** | **bool**| Option to skip host validation on PVMInstance Create API | [optional] 
 
 ### Return type
 
@@ -758,7 +953,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -780,8 +975,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudPVMInstancesApi()
+api_instance = ip4g.PCloudPVMInstancesApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 pvm_instance_id = 'pvm_instance_id_example' # str | PCloud PVM Instance ID
 body = ip4g.PVMInstanceUpdate() # PVMInstanceUpdate | Parameters to update a PCloud PVM Instance
@@ -798,9 +1002,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
- **pvm_instance_id** | **str**| PCloud PVM Instance ID |
- **body** | [**PVMInstanceUpdate**](PVMInstanceUpdate.md)| Parameters to update a PCloud PVM Instance |
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **pvm_instance_id** | **str**| PCloud PVM Instance ID | 
+ **body** | [**PVMInstanceUpdate**](PVMInstanceUpdate.md)| Parameters to update a PCloud PVM Instance | 
 
 ### Return type
 
@@ -808,7 +1012,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -830,8 +1034,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudPVMInstancesApi()
+api_instance = ip4g.PCloudPVMInstancesApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 pvm_instance_id = 'pvm_instance_id_example' # str | PCloud PVM Instance ID
 
@@ -847,8 +1060,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
- **pvm_instance_id** | **str**| PCloud PVM Instance ID |
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **pvm_instance_id** | **str**| PCloud PVM Instance ID | 
 
 ### Return type
 
@@ -856,7 +1069,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -878,8 +1091,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudPVMInstancesApi()
+api_instance = ip4g.PCloudPVMInstancesApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 pvm_instance_id = 'pvm_instance_id_example' # str | PCloud PVM Instance ID
 body = ip4g.SnapshotCreate() # SnapshotCreate | PVM Instance snapshot create parameters
@@ -896,9 +1118,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
- **pvm_instance_id** | **str**| PCloud PVM Instance ID |
- **body** | [**SnapshotCreate**](SnapshotCreate.md)| PVM Instance snapshot create parameters |
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **pvm_instance_id** | **str**| PCloud PVM Instance ID | 
+ **body** | [**SnapshotCreate**](SnapshotCreate.md)| PVM Instance snapshot create parameters | 
 
 ### Return type
 
@@ -906,7 +1128,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -928,8 +1150,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudPVMInstancesApi()
+api_instance = ip4g.PCloudPVMInstancesApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 pvm_instance_id = 'pvm_instance_id_example' # str | PCloud PVM Instance ID
 snapshot_id = 'snapshot_id_example' # str | PVM Instance snapshot id
@@ -948,11 +1179,11 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
- **pvm_instance_id** | **str**| PCloud PVM Instance ID |
- **snapshot_id** | **str**| PVM Instance snapshot id |
- **body** | [**SnapshotRestore**](SnapshotRestore.md)| PVM Instance snapshot restore parameters |
- **restore_fail_action** | **str**| Action to take on a failed snapshot restore | [optional]
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **pvm_instance_id** | **str**| PCloud PVM Instance ID | 
+ **snapshot_id** | **str**| PVM Instance snapshot id | 
+ **body** | [**SnapshotRestore**](SnapshotRestore.md)| PVM Instance snapshot restore parameters | 
+ **restore_fail_action** | **str**| Action to take on a failed snapshot restore | [optional] 
 
 ### Return type
 
@@ -960,7 +1191,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -982,8 +1213,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudPVMInstancesApi()
+api_instance = ip4g.PCloudPVMInstancesApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 pvm_instance_id = 'pvm_instance_id_example' # str | PCloud PVM Instance ID
 
@@ -999,8 +1239,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
- **pvm_instance_id** | **str**| PCloud PVM Instance ID |
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **pvm_instance_id** | **str**| PCloud PVM Instance ID | 
 
 ### Return type
 
@@ -1008,7 +1248,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -1030,8 +1270,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudPVMInstancesApi()
+api_instance = ip4g.PCloudPVMInstancesApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 pvm_instance_id = 'pvm_instance_id_example' # str | PCloud PVM Instance ID
 body = ip4g.PVMInstanceCapture() # PVMInstanceCapture | Parameters for the capture
@@ -1048,9 +1297,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
- **pvm_instance_id** | **str**| PCloud PVM Instance ID |
- **body** | [**PVMInstanceCapture**](PVMInstanceCapture.md)| Parameters for the capture |
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **pvm_instance_id** | **str**| PCloud PVM Instance ID | 
+ **body** | [**PVMInstanceCapture**](PVMInstanceCapture.md)| Parameters for the capture | 
 
 ### Return type
 
@@ -1058,7 +1307,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -1066,3 +1315,4 @@ No authorization required
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
