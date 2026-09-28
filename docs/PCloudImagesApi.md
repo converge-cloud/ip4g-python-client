@@ -30,8 +30,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudImagesApi()
+api_instance = ip4g.PCloudImagesApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 image_id = 'image_id_example' # str | Image ID of a image
 
@@ -47,8 +56,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
- **image_id** | **str**| Image ID of a image |
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **image_id** | **str**| Image ID of a image | 
 
 ### Return type
 
@@ -56,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -78,8 +87,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudImagesApi()
+api_instance = ip4g.PCloudImagesApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 image_id = 'image_id_example' # str | Image ID of a image
 body = ip4g.ExportImage() # ExportImage | Parameters for exporting an image
@@ -96,9 +114,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
- **image_id** | **str**| Image ID of a image |
- **body** | [**ExportImage**](ExportImage.md)| Parameters for exporting an image |
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **image_id** | **str**| Image ID of a image | 
+ **body** | [**ExportImage**](ExportImage.md)| Parameters for exporting an image | 
 
 ### Return type
 
@@ -106,7 +124,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -128,8 +146,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudImagesApi()
+api_instance = ip4g.PCloudImagesApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 image_id = 'image_id_example' # str | Image ID of a image
 
@@ -145,8 +172,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
- **image_id** | **str**| Image ID of a image |
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **image_id** | **str**| Image ID of a image | 
 
 ### Return type
 
@@ -154,7 +181,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -176,8 +203,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudImagesApi()
+api_instance = ip4g.PCloudImagesApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 
 try:
@@ -192,7 +228,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
 
 ### Return type
 
@@ -200,7 +236,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -222,8 +258,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudImagesApi()
+api_instance = ip4g.PCloudImagesApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 body = ip4g.CreateImage() # CreateImage | Parameters for the creation of a new image from available images
 
@@ -239,8 +284,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
- **body** | [**CreateImage**](CreateImage.md)| Parameters for the creation of a new image from available images |
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **body** | [**CreateImage**](CreateImage.md)| Parameters for the creation of a new image from available images | 
 
 ### Return type
 
@@ -248,7 +293,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -270,8 +315,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudImagesApi()
+api_instance = ip4g.PCloudImagesApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 image_id = 'image_id_example' # str | Image ID of a image
 
@@ -287,8 +341,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
- **image_id** | **str**| Image ID of a image |
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **image_id** | **str**| Image ID of a image | 
 
 ### Return type
 
@@ -296,7 +350,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -318,8 +372,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudImagesApi()
+api_instance = ip4g.PCloudImagesApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 sap = true # bool | Include SAP images with get available stock images (optional)
 vtl = true # bool | Include VTL images with get available stock images (optional)
@@ -336,9 +399,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
- **sap** | **bool**| Include SAP images with get available stock images | [optional]
- **vtl** | **bool**| Include VTL images with get available stock images | [optional]
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **sap** | **bool**| Include SAP images with get available stock images | [optional] 
+ **vtl** | **bool**| Include VTL images with get available stock images | [optional] 
 
 ### Return type
 
@@ -346,7 +409,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -368,8 +431,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudImagesApi()
+api_instance = ip4g.PCloudImagesApi(ip4g.ApiClient(configuration))
 image_id = 'image_id_example' # str | Image ID of a image
 
 try:
@@ -384,7 +456,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **image_id** | **str**| Image ID of a image |
+ **image_id** | **str**| Image ID of a image | 
 
 ### Return type
 
@@ -392,7 +464,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -414,8 +486,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudImagesApi()
+api_instance = ip4g.PCloudImagesApi(ip4g.ApiClient(configuration))
 sap = true # bool | Include SAP images with get available stock images (optional)
 vtl = true # bool | Include VTL images with get available stock images (optional)
 
@@ -431,8 +512,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sap** | **bool**| Include SAP images with get available stock images | [optional]
- **vtl** | **bool**| Include VTL images with get available stock images | [optional]
+ **sap** | **bool**| Include SAP images with get available stock images | [optional] 
+ **vtl** | **bool**| Include VTL images with get available stock images | [optional] 
 
 ### Return type
 
@@ -440,7 +521,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -462,8 +543,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudImagesApi()
+api_instance = ip4g.PCloudImagesApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 image_id = 'image_id_example' # str | Image ID of a image
 
@@ -479,8 +569,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
- **image_id** | **str**| Image ID of a image |
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **image_id** | **str**| Image ID of a image | 
 
 ### Return type
 
@@ -488,7 +578,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -510,8 +600,17 @@ import ip4g
 from ip4g.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: bearerAuth
+configuration = ip4g.Configuration()
+configuration.api_key['Authorization'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['Authorization'] = 'Bearer'
+# Configure OAuth2 access token for authorization: oauth2
+configuration = ip4g.Configuration()
+configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
 # create an instance of the API class
-api_instance = ip4g.PCloudImagesApi()
+api_instance = ip4g.PCloudImagesApi(ip4g.ApiClient(configuration))
 cloud_instance_id = 'cloud_instance_id_example' # str | Cloud Instance ID of a PCloud Instance
 image_id = 'image_id_example' # str | Image ID of a image
 body = ip4g.ExportImage() # ExportImage | Parameters for the export
@@ -528,9 +627,9 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance |
- **image_id** | **str**| Image ID of a image |
- **body** | [**ExportImage**](ExportImage.md)| Parameters for the export |
+ **cloud_instance_id** | **str**| Cloud Instance ID of a PCloud Instance | 
+ **image_id** | **str**| Image ID of a image | 
+ **body** | [**ExportImage**](ExportImage.md)| Parameters for the export | 
 
 ### Return type
 
@@ -538,7 +637,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth), [oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -546,3 +645,4 @@ No authorization required
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
